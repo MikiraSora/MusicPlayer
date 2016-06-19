@@ -397,7 +397,7 @@ class ExMusicPlayer extends MusicPlayer {
                     String name = listViewer.getResult();
                     Song[] songs = musicDataBase.LoadPlayList(name);
                     if (songs == null)
-                        SendErrorMsg("Cant get any song from playlist");
+                        SendErrorMsg("Can t get any song from playlist");
                     else if (songs.length == 0)
                         SendErrorMsg("Cant get any song from playlist");
                     play_list.clear();
