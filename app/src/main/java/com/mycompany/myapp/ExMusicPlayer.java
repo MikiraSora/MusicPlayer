@@ -32,7 +32,9 @@ class ExMusicPlayer extends MusicPlayer {
     TriggerPlayNext on_default_playnext = new TriggerPlayNext();
     TriggerPlayPrevious on_default_playprevious = new TriggerPlayPrevious();
     TriggerChangePlayMode on_default_playmodechange = new TriggerChangePlayMode();
-    TriggerPlayListSave on_default_changeplaylistsave = new TriggerPlayListSave();
+    TriggerPlayListSave on_default_playlistsave = new TriggerPlayListSave();
+    TriggerPlayListLoad on_default_playlistload = new TriggerPlayListLoad();
+
 
     boolean ableUpdateTime = true;
     boolean alreayStarted = false;
@@ -371,6 +373,39 @@ class ExMusicPlayer extends MusicPlayer {
                 });
                 builder.show();
             }
+        }
+    }
+
+    class TriggerPlayListLoad implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+            builder.setTitle("请选择播放列表");
+            final PlaylistSelectionListViewer listViewer = new PlaylistSelectionListViewer(ctx);
+            for (String name : musicDataBase.getAllPlayList())
+                listViewer.addPlayListName(name);
+            builder.setView(listViewer);
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            builder.setPositiveButton("Select", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    String name = listViewer.getResult();
+                    Song[] songs = musicDataBase.LoadPlayList(name);
+                    if (songs == null)
+                        SendErrorMsg("Cant get any song from playlist");
+                    else if (songs.length == 0)
+                        SendErrorMsg("Cant get any song from playlist");
+                    play_list.clear();
+                    for (Song song : songs)
+                        play_list.add(song);
+                }
+            });
+            builder.show();
         }
     }
 }

@@ -78,11 +78,13 @@ public class MainActivity extends Activity
 		Button btn = (Button) findViewById(R.id.action);
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		Blur.setContext(getApplicationContext());
+
 		btn.setOnClickListener(mplayer.on_default_play);
 		findViewById((R.id.Next)).setOnClickListener((mplayer.on_default_playnext));
 		findViewById((R.id.Previous)).setOnClickListener((mplayer.on_default_playprevious));
 		findViewById((R.id.statu)).setOnClickListener((mplayer.on_default_playmodechange));
-		findViewById(R.id.save).setOnClickListener(mplayer.on_default_changeplaylistsave);
+		findViewById(R.id.save).setOnClickListener(mplayer.on_default_playlistsave);
+		findViewById(R.id.load).setOnClickListener(mplayer.on_default_playlistload);
 
 		map.put("action", btn);
 		//map.put(("visualizer"),findViewById(R.id.visualizerView));
@@ -93,8 +95,9 @@ public class MainActivity extends Activity
 		map.put("bg", findViewById((R.id.bg)));
 		map.put("id", findViewById((R.id.id)));
 		map.put("statu", findViewById((R.id.statu)));
+
 		mplayer.map = map;
-		mplayer.enableDumpDebugMsg(false);
+		mplayer.enableDumpDebugMsg(true);
 
 
 		mplayer.initVisualizerView();
@@ -129,7 +132,12 @@ public class MainActivity extends Activity
 				i++;
 			}
 			if (list.size() != 0)
-				Init(g);
+				if (mplayer == null)
+					Init(g);
+				else {
+					for (String str : list)
+						mplayer.addSong(str);
+				}
 			else {
 				file_dialog.setTitle("请选择正确的文件夹！");
 				file_dialog.show();
