@@ -4,4 +4,23 @@
     <string name="app_name">MusicPlayer</string>
     <string name="hello_world">Hello world!</string>
 
+    <string name="openfiledialog_path">Path:</string>
+    <string name="openfiledialog_open_file_button_label">Select File</string>
+    <string name="openfiledialog_open_file_with_folder_button_label">Select File or Folder</string>
+    <string name="openfiledialog_dialog_title">Select a File</string>
+    <string name="openfiledialog_dialog_with_folder_title">Select a File or Folder</string>
+    <string name="permission_request_read_external_storage">Give permission to read your phones storage</string>
+    <string name="permission_request_read_external_storage_denied">You can\'t select files or folders without giving the app permission to acces your phone\'s storage</string>
+    <string name="title_activity_main_player">main_player</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
