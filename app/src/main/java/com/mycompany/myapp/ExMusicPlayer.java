@@ -1,6 +1,7 @@
 package com.mycompany.myapp;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
@@ -15,7 +16,10 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 //import java.util.logging.*;
 
 class ExMusicPlayer extends MusicPlayer {
@@ -34,6 +38,8 @@ class ExMusicPlayer extends MusicPlayer {
     TriggerChangePlayMode on_default_playmodechange = new TriggerChangePlayMode();
     TriggerPlayListSave on_default_playlistsave = new TriggerPlayListSave();
     TriggerPlayListLoad on_default_playlistload = new TriggerPlayListLoad();
+    TriggerPlayListDelete on_default_playlistdelete = new TriggerPlayListDelete();
+    TriggerPlayListAdd on_default_playlistadd = new TriggerPlayListAdd();
 
 
     boolean ableUpdateTime = true;
@@ -43,8 +49,8 @@ class ExMusicPlayer extends MusicPlayer {
 
     //VisualizerView visualizer=null;
 
-    protected ExMusicPlayer() {
-        super();
+    protected ExMusicPlayer(Context c) {
+        this(c, null);
     }
 
     public ExMusicPlayer(Context c, String[] list) {
@@ -101,7 +107,7 @@ class ExMusicPlayer extends MusicPlayer {
             } else {
                 ((ImageView) map.get("cover")).setImageBitmap(info.Cover);
             }
-            ((TextView) map.get("id")).setText(String.format("%s / %s", info.Index, getPlayListSize()));
+            ((TextView) map.get("id")).setText(String.format("%s / %s", info.Index + 1, play_list.size()));
             ((TextView) map.get("song")).setText(String.format("%s - %s", info.Artist, info.Title));
             Log.d("song info", String.format("%s - %d : %s - %s", info.Encode, info.Index, info.Artist, info.Title));
             Log.d("PlayStatu", "onGetInfo()");
@@ -340,12 +346,22 @@ class ExMusicPlayer extends MusicPlayer {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
                 final EditText editText = new EditText(ctx);
                 editText.setHint("input new playlist name.");
+                builder.setMessage("Save to new playlist.");
                 builder.setView(editText);
                 builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         playlist_name = editText.getText().toString();
-                        musicDataBase.SavePlayList(playlist_name, saves);
+                        if (playlist_name.length() == 0) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+                            builder.setTitle("新建的播放列表名不能为空!");
+                            builder.setPositiveButton("了解", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                }
+                            });
+                        } else
+                            musicDataBase.SavePlayList(playlist_name, saves);
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -371,6 +387,13 @@ class ExMusicPlayer extends MusicPlayer {
                     public void onClick(DialogInterface dialogInterface, int i) {
                     }
                 });
+                builder.setNeutralButton("New Another", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        playlist_name = null;
+                        on_default_playlistadd.onClick(null);
+                    }
+                });
                 builder.show();
             }
         }
@@ -381,31 +404,209 @@ class ExMusicPlayer extends MusicPlayer {
         public void onClick(View view) {
             AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
             builder.setTitle("请选择播放列表");
-            final PlaylistSelectionListViewer listViewer = new PlaylistSelectionListViewer(ctx);
-            for (String name : musicDataBase.getAllPlayList())
-                listViewer.addPlayListName(name);
-            builder.setView(listViewer);
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
+            //final PlaylistSelectionListViewer listViewer = new PlaylistSelectionListViewer(ctx);
 
-                }
-            });
-            builder.setPositiveButton("Select", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    String name = listViewer.getResult();
-                    Song[] songs = musicDataBase.LoadPlayList(name);
-                    if (songs == null)
-                        SendErrorMsg("Can t get any song from playlist");
-                    else if (songs.length == 0)
-                        SendErrorMsg("Cant get any song from playlist");
-                    play_list.clear();
-                    for (Song song : songs)
-                        play_list.add(song);
-                }
-            });
+            if (musicDataBase.getAllPlayList().length != 0) {
+                final String[] allPlayList = musicDataBase.getAllPlayList();
+                builder.setItems(allPlayList, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Song[] songs = musicDataBase.LoadPlayList(allPlayList[i]);
+                        if (songs == null) {
+                            SendErrorMsg("Cant get any song from playlist because of returning null");
+                            return;
+                        } else if (songs.length == 0) {
+                            SendErrorMsg("Cant get any song from playlist because nothing in it");
+                            return;
+                        }
+                        play_list.clear();
+                        for (Song song : songs)
+                            play_list.add(song);
+                        Reset();
+                    }
+                });
+            } else {
+                builder.setTitle("无任何播放列表记录在内!");
+                builder.setNegativeButton("返回", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+            }
+                /*
+                 for (String name : musicDataBase.getAllPlayList())
+                     listViewer.addPlayListName(name);
+                builder.setView(listViewer);
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                  @Override
+                   public void onClick(DialogInterface dialogInterface, int i) {
+
+                  }
+                  });
+                builder.setPositiveButton("Select", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String name = listViewer.getResult();
+                        if(name==null)
+                            return;
+                        Song[] songs = musicDataBase.LoadPlayList(name);
+                        if (songs == null){
+                         SendErrorMsg("Cant get any song from playlist because of returning null");
+                         return;
+                         }
+                        else if (songs.length == 0){
+                            SendErrorMsg("Cant get any song from playlist because nothing in it");
+                            return;
+                        }
+                        play_list.clear();
+                        for (Song song : songs)
+                            play_list.add(song);
+                        Reset();
+                    }
+              });
+            }else{
+                builder.setMessage("无任何播放列表!");
+                builder.setNeutralButton("返回", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {}
+                });
+            }
+               */
             builder.show();
+        }
+    }
+
+    class TriggerPlayListDelete implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+            builder.setTitle("请选择播放列表");
+            final PlaylistSelectionListViewer listViewer = new PlaylistSelectionListViewer(ctx);
+
+            if (musicDataBase.getAllPlayList().length != 0) {
+                for (String name : musicDataBase.getAllPlayList())
+                    listViewer.addPlayListName(name);
+                builder.setView(listViewer);
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.setPositiveButton("Select", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String name = listViewer.getResult();
+                        if (name == null)
+                            return;
+                        musicDataBase.DeletePlayList(name);
+                        Reset();
+                    }
+                });
+            } else {
+                builder.setMessage("无任何播放列表!");
+                builder.setNeutralButton("返回", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+            }
+
+            builder.show();
+        }
+    }
+
+    class TriggerPlayListAdd implements OnClickListener {
+        OpenFileDialog file_dialog;
+
+        @Override
+        public void onClick(View view) {
+            file_dialog = new OpenFileDialog(ctx);
+            file_dialog.setOkButtonText("确定");
+            file_dialog.setPath("/sdcard/");
+            file_dialog.setFolderSelectable(true)
+                    .setFolderIcon(R.drawable.ic_folder_black_48dp)
+                    .setFileIcon(R.drawable.ic_insert_drive_file_black_48dp)
+                    .setTitle("请选择音乐文件夹......");
+            file_dialog.setOnCloseListener(new onSelectFolder());
+            file_dialog.show();
+        }
+
+        class onSelectFolder implements OpenFileDialog.OnCloseListener {
+
+            @Override
+            public void onOk(String selectedFile) {
+                File file = new File(selectedFile);
+                ArrayList<String> list = new ArrayList<String>();
+                if (!file.isDirectory())
+                    return;
+                File[] files = file.listFiles();
+
+                Pattern reg = Pattern.compile(".*\\.mp3");
+
+                int i = 0;
+                for (File f : files) {
+                    if (f.isDirectory())
+                        continue;
+                    if (!reg.matcher(f.getAbsolutePath()).matches())
+                        continue;
+                    list.add(f.getAbsolutePath());
+                    i++;
+                }
+                String[] g = new String[list.size()];
+                i = 0;
+                for (String d : list) {
+                    g[i] = d;
+                    i++;
+                }
+                if (list.size() != 0) {
+                    AddSong(list);
+                } else {
+                    file_dialog.setTitle("请选择正确的文件夹！");
+                    file_dialog.show();
+                }
+            }
+
+            private void AddSong(final ArrayList<String> list) {
+                final ProgressDialog dialog = new ProgressDialog(ctx);
+                dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                dialog.setCancelable(false);
+                dialog.setTitle("正在添加");
+                dialog.setMessage("");
+                dialog.setCanceledOnTouchOutside(false);
+                new Thread() {
+                    @Override
+                    public void run() {
+                        super.run();
+                        CallerDialogUpdate dialogUpdate = new CallerDialogUpdate();
+                        dialogUpdate.size = list.size();
+                        dialogUpdate.dialog = dialog;
+                        for (String str : list) {
+                            dialogUpdate.curSong = addSong(str);
+                            handle.post(dialogUpdate);
+                        }
+                        dialog.dismiss();
+                    }
+                }.start();
+                dialog.show();
+            }
+
+            @Override
+            public void onCancel() {
+            }
+
+            class CallerDialogUpdate implements Runnable {
+                int i = 0, size = 0;
+                ProgressDialog dialog;
+                Song curSong = null;
+                @Override
+                public void run() {
+                    i++;
+                    dialog.setProgressNumberFormat(String.format("%1d/%2d", i, size));
+                    dialog.setProgress((int) (i * 1.0f / size * 100.0f));
+                    dialog.setMessage(String.format("%s - %s", curSong.Artist, curSong.Title));
+                }
+            }
         }
     }
 }

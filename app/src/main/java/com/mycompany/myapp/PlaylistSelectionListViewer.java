@@ -25,7 +25,7 @@ public class PlaylistSelectionListViewer extends ListView {
     }
 
     String getResult() {
-        return playlistAdapter.playlistname_list.get(selected_id);
+        return selected_id < 0 ? null : playlistAdapter.playlistname_list.get(selected_id);
     }
 
     void addPlayListName(String name) {
@@ -69,6 +69,7 @@ public class PlaylistSelectionListViewer extends ListView {
             textView.setText((String) getItem(id));
             //textView.setBackgroundColor(Color.rgb(255,255,255));
             textView.setHeight(80);
+            textView.setTextSize(15.0f);
             if (id == selected_id) {
                 textView.setBackgroundColor(Color.rgb(0, 0, 255));
                 textView.setTextColor(Color.rgb(255, 255, 255));
@@ -76,11 +77,11 @@ public class PlaylistSelectionListViewer extends ListView {
                 textView.setBackgroundColor(Color.rgb(255, 255, 255));
                 textView.setTextColor(Color.rgb(0, 0, 0));
             }
-            textView.setTag(0, id);
+            textView.setTag(id);
             textView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    selected_id = (int) view.getTag(0);
+                    selected_id = (int) view.getTag();
                     view.setBackgroundColor(Color.rgb(0, 0, 255));
                     ((TextView) view).setTextColor(Color.rgb(255, 255, 255));
                     if (last_selected != null && last_selected != view) {

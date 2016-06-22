@@ -6,7 +6,7 @@ import org.json.JSONObject;
  * Created by mikir on 2016/6/19.
  */
 public class Song {
-    public String Title, Artist, File_Path, AbsFile_Path, Album;
+    public String Title, Artist, AbsFile_Path, Album;
 
     public static Song parserJSON(String json_str) throws Exception {
         Song song = new Song();
@@ -16,7 +16,6 @@ public class Song {
         song.AbsFile_Path = jsonObject.getString("AbsFile_Path");
         song.Album = jsonObject.getString("Album");
         song.Artist = jsonObject.getString("Artist");
-        song.File_Path = jsonObject.getString("File_Path");
 
         return song;
     }
@@ -28,7 +27,6 @@ public class Song {
         jsonObject.put("Album", Album);
         jsonObject.put("Artist", Artist);
         jsonObject.put("Title", Title);
-        jsonObject.put("File_Path", File_Path);
 
         return jsonObject.toString();
     }
