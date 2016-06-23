@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
 
+import com.mycompany.myapp.LyricView.LyricView;
+
 import java.util.HashMap;
 
 
@@ -29,6 +31,7 @@ public class MainActivity extends Activity
 		/*
 		
 		*/
+		LyricView lyricView = (LyricView) findViewById(R.id.lyricview);
 		Button btn = (Button) findViewById(R.id.action);
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		Blur.setContext(getApplicationContext());
@@ -52,12 +55,19 @@ public class MainActivity extends Activity
 		map.put("bg", findViewById((R.id.bg)));
 		map.put("id", findViewById((R.id.id)));
 		map.put("statu", findViewById((R.id.statu)));
+		map.put("lyricview", findViewById((R.id.lyricview)));
 
 		mplayer.map = map;
 		mplayer.enableDumpDebugMsg(true);
 
-
+		lyricView.setOnScrollFhinished(new LyricView.OnScrollFinished() {
+			@Override
+			public void onScrolliFinished(int time) {
+				mplayer.JumpTo(time, 0, false);
+			}
+		});
 		mplayer.initVisualizerView();
+		lyricView.bindMusicPlayer(mplayer);
 	}
 }
 

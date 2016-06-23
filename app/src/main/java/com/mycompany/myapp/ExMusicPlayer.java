@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -16,13 +17,15 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import com.mycompany.myapp.LyricView.LyricView;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 //import java.util.logging.*;
 
-class ExMusicPlayer extends MusicPlayer {
+public class ExMusicPlayer extends MusicPlayer {
     HashMap<String, Object> map;
     Thread t = new Thread(new UpdateTimeCaller());
     TimerDisplayer displayer = new TimerDisplayer(new Handler());
@@ -71,6 +74,10 @@ class ExMusicPlayer extends MusicPlayer {
         musicDataBase = new MusicDataBase(c);
     }
 
+    MediaPlayer getMediaPlayer() {
+        return getPlayer();
+    }
+
     void initVisualizerView() {/*
         VisualizerView visualizer=(VisualizerView)map.get("visualizer");
 		visualizer.enableAsyncRender(true);
@@ -109,8 +116,10 @@ class ExMusicPlayer extends MusicPlayer {
             }
             ((TextView) map.get("id")).setText(String.format("%s / %s", info.Index + 1, play_list.size()));
             ((TextView) map.get("song")).setText(String.format("%s - %s", info.Artist, info.Title));
+            String lyric_path = info.File_Path.replace(".mp3", ".lrc");
+            ((LyricView) map.get("lyricview")).setLyricFromFile(lyric_path);
+            ((LyricView) map.get("lyricview")).Start();
             Log.d("song info", String.format("%s - %d : %s - %s", info.Encode, info.Index, info.Artist, info.Title));
-            Log.d("PlayStatu", "onGetInfo()");
         }
 
     }
