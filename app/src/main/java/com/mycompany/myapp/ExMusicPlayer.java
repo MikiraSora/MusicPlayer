@@ -27,14 +27,15 @@ import java.util.regex.Pattern;
 
 public class ExMusicPlayer extends MusicPlayer {
     HashMap<String, Object> map;
-    Thread t = new Thread(new UpdateTimeCaller());
+
     TimerDisplayer displayer = new TimerDisplayer(new Handler());
 
     MusicDataBase musicDataBase = null;
 
+
     TriggerPlay on_default_play = new TriggerPlay();
-    TriggerPauseMusic on_default_pause = new TriggerPauseMusic();
-    TriggerResumeMusic on_default_resume = new TriggerResumeMusic();
+    TriggerPause on_default_pause = new TriggerPause();
+    TriggerResume on_default_resume = new TriggerResume();
     TriggerStop on_default_stop = new TriggerStop();
     TriggerPlayNext on_default_playnext = new TriggerPlayNext();
     TriggerPlayPrevious on_default_playprevious = new TriggerPlayPrevious();
@@ -43,66 +44,191 @@ public class ExMusicPlayer extends MusicPlayer {
     TriggerPlayListLoad on_default_playlistload = new TriggerPlayListLoad();
     TriggerPlayListDelete on_default_playlistdelete = new TriggerPlayListDelete();
     TriggerPlayListAdd on_default_playlistadd = new TriggerPlayListAdd();
+    TriggerSeekTime on_default_seektime = new TriggerSeekTime();
 
 
     boolean ableUpdateTime = true;
     boolean alreayStarted = false;
 
     String playlist_name = null;
-
-    //VisualizerView visualizer=null;
-
+    HashMap<String, Object> callbackmap = new HashMap<>();
     protected ExMusicPlayer(Context c) {
         this(c, null);
+        Init();
     }
 
     public ExMusicPlayer(Context c, String[] list) {
         super(c, new Handler(), list);
+        Init();
+    }
 
-        setOnPlay(new OnPlay() {
-            boolean isfirst = true;
-
-            @Override
-            public void onPlay(int index) {
-                ((Button) map.get("action")).setText("Playing");
-                StartUpdate();
-            }
-        });
-        setPlayChangeMode(PlayChangeMode.Normal);
-        setOnGetInfo(new TriggerOnGetInfo());
-        setOnChangePlayMode(new CallerPlayModeChange());
-        musicDataBase = new MusicDataBase(c);
+    private void Init() {
+        map = new HashMap<>();
+        setOnPlay(new CallBack_OnPlay());
+        setOnChangePlayMode(new CallBack_OnPlayModeChange());
+        setOnGetInfo(new CallBack_OnGetInfo());
+        setOnPause(new CallBack_OnPause());
+        setOnStop(new CallBack_OnStop());
+        setOnResume(new CallBack_OnResume());
+        musicDataBase = new MusicDataBase(ctx);
     }
 
     MediaPlayer getMediaPlayer() {
         return getPlayer();
     }
 
-    void initVisualizerView() {/*
-        VisualizerView visualizer=(VisualizerView)map.get("visualizer");
-		visualizer.enableAsyncRender(true);
-		Paint linePaint = new Paint();
-		linePaint.setStrokeWidth(1f);
-		linePaint.setAntiAlias(true);
-		linePaint.setColor(Color.argb(88, 0, 128, 255));
-
-		Paint lineFlashPaint = new Paint();
-		lineFlashPaint.setStrokeWidth(5f);
-		lineFlashPaint.setAntiAlias(true);
-		lineFlashPaint.setColor(Color.argb(188, 255, 255, 255));
-		LineRenderer lineRenderer = new LineRenderer(linePaint, lineFlashPaint, true);
-		visualizer.addRenderer(lineRenderer);
-		//psetVisualizerView(visualizer);
-		visualizer.enableAsyncRender(false);
-		visualizer.setAsyncHandler(new Handler());*/
+    OnClickListener setPlayTrigger(TriggerPlay trigger) {
+        callbackmap.put("play", trigger);
+        return trigger;
     }
 
-    private void StartUpdate() {
-        if (alreayStarted)
-            return;
-        alreayStarted = true;
-        ((SeekBar) map.get("seekbar")).setOnSeekBarChangeListener(new TriggerSeekTime());
-        t.start();
+    //outside of class setOnClickListener() and take them in.
+
+    OnClickListener setPlayNextTrigger(TriggerPlayNext trigger) {
+        callbackmap.put("playnext", trigger);
+        return trigger;
+    }
+
+    OnClickListener setPlayPreviousTrigger(TriggerPlayPrevious trigger) {
+        callbackmap.put("playprevious", trigger);
+        return trigger;
+    }
+
+    OnClickListener setPauseTrigger(TriggerPause trigger) {
+        callbackmap.put("pause", trigger);
+        return trigger;
+    }
+
+    OnClickListener setPlayResumeTrigger(TriggerResume trigger) {
+        callbackmap.put("resume", trigger);
+        return trigger;
+    }
+
+    OnClickListener setStopTrigger(TriggerStop trigger) {
+        callbackmap.put("stop", trigger);
+        return trigger;
+    }
+
+    void setGetInfoTrigger(TriggerOnGetInfo trigger) {
+        callbackmap.put("getinfo", trigger);
+    }
+
+    OnClickListener setPlayListAddTrigger(TriggerPlayListAdd trigger) {
+        callbackmap.put("playlistadd", trigger);
+        return trigger;
+    }
+
+    OnClickListener setPlayListDeleteTrigger(TriggerPlayListDelete trigger) {
+        callbackmap.put("playlistdelete", trigger);
+        return trigger;
+    }
+
+    OnClickListener setPlayListLoadTrigger(TriggerPlayListLoad trigger) {
+        callbackmap.put("playlistload", trigger);
+        return trigger;
+    }
+
+    OnSeekBarChangeListener setSeekTimeTrigger(TriggerSeekTime trigger) {
+        callbackmap.put("triggerSeekTime", trigger);
+        return trigger;
+    }
+
+    OnClickListener setPlayListSaveTrigger(TriggerPlayListSave trigger) {
+        callbackmap.put("playlistsave", trigger);
+        return trigger;
+    }
+
+    OnClickListener setChangePlayMode(TriggerChangePlayMode trigger) {
+        callbackmap.put("changeplaymode", trigger);
+        return trigger;
+    }
+
+    void setPlayButton(Button btn, TriggerPlay triggerPlay) {
+        map.put("play", btn);
+        btn.setOnClickListener(setPlayTrigger(triggerPlay));
+    }
+
+    void setPauseButton(Button btn, TriggerPause triggerPause) {
+        map.put("pause", btn);
+        btn.setOnClickListener(setPauseTrigger(triggerPause));
+    }
+
+    void setPlayPauseButton(Button button, TriggerPlay triggerPlay, TriggerPause triggerPause, TriggerResume triggerResume) {
+        setPauseButton(button, triggerPause);
+        setResumeButton(button, triggerResume);
+        setPlayButton(button, triggerPlay);
+    }
+
+    void setPlayNextButton(Button btn, TriggerPlayNext triggerPlayNext) {
+        map.put("playnext", btn);
+        btn.setOnClickListener(setPlayNextTrigger(triggerPlayNext));
+    }
+
+    void setPlayPreviousButton(Button btn, TriggerPlayPrevious triggerPlayPrevious) {
+        map.put("playprevious", btn);
+        btn.setOnClickListener(setPlayPreviousTrigger(triggerPlayPrevious));
+    }
+
+    void setResumeButton(Button btn, TriggerResume triggerResume) {
+        map.put("resume", btn);
+        btn.setOnClickListener(setPlayResumeTrigger(triggerResume));
+    }
+
+    void setStopButton(Button btn, TriggerStop triggerStop) {
+        map.put("stop", btn);
+        btn.setOnClickListener(setStopTrigger(triggerStop));
+    }
+
+    void setChangePlayModeButton(Button btn, TriggerChangePlayMode triggerChangePlayMode) {
+        map.put("changeplaymode", btn);
+        btn.setOnClickListener(setChangePlayMode(triggerChangePlayMode));
+    }
+
+    void setPlayListAddButton(Button btn, TriggerPlayListAdd triggerPlayListAdd) {
+        map.put("playlistadd", btn);
+        btn.setOnClickListener(setPlayListAddTrigger(triggerPlayListAdd));
+    }
+
+    void setPlayListDeleteButton(Button btn, TriggerPlayListDelete triggerPlayListDelete) {
+        map.put("playlistdelete", btn);
+        btn.setOnClickListener(setPlayListDeleteTrigger(triggerPlayListDelete));
+    }
+
+    void setPlayListLoadButton(Button btn, TriggerPlayListLoad triggerPlayListLoad) {
+        map.put("playlistload", btn);
+        btn.setOnClickListener(setPlayListLoadTrigger(triggerPlayListLoad));
+    }
+
+    void setPlayListSaveButton(Button btn, TriggerPlayListSave triggerPlayListSave) {
+        map.put("playlistsave", btn);
+        btn.setOnClickListener(setPlayListSaveTrigger(triggerPlayListSave));
+    }
+
+    void setSeekTimeBar(SeekBar btn, TriggerSeekTime triggerPlayListSave) {
+        map.put("seektime", btn);
+        btn.setOnSeekBarChangeListener(setSeekTimeTrigger(triggerPlayListSave));
+    }
+
+    void bindLyricView(LyricView view) {
+        map.put("lyricview", view);
+    }
+
+    Object getWidght(String name) {
+        if (map.containsKey(name))
+            return map.get(name);
+        SendErrorMsg(String.format("missing elem \"%s\" in map,may you miss it?", name));
+        return null;
+    }
+
+    void setCallBack(String name, Object callback) {
+        callbackmap.put(name, callback);
+    }
+
+    Object getCallBack(String name) {
+        if (callbackmap.containsKey(name))
+            return callbackmap.get(name);
+        SendErrorMsg(String.format("missing elem \"%s\" in callback map,may you miss it?", name));
+        return null;
     }
 
     class TriggerOnGetInfo implements OnGetInfo {
@@ -148,43 +274,23 @@ public class ExMusicPlayer extends MusicPlayer {
         }
     }
 
-    class UpdateTimeCaller implements Runnable {
-        public UpdateTimeCaller() {
-        }
-
-        @Override
-        public void run() {
-            displayer.notifyThreadCall();
-        }
-    }
-
-    public class TriggerPlay implements OnClickListener {
+    class TriggerPlay implements OnClickListener {
         @Override
         public void onClick(View p1) {
-            ((Button) map.get("action")).setText("Playing");
-            ((Button) map.get("action")).setOnClickListener(new TriggerPauseMusic());
-
             Play(index);
-            StartUpdate();
         }
     }
 
-    class TriggerResumeMusic implements OnClickListener {
+    class TriggerResume implements OnClickListener {
         @Override
         public void onClick(View p1) {
-            ((Button) map.get("action")).setText("Playing");
-            ((Button) map.get("action")).setOnClickListener(new TriggerPauseMusic());
-
             Resume();
         }
     }
 
-    class TriggerPauseMusic implements OnClickListener {
+    class TriggerPause implements OnClickListener {
         @Override
         public void onClick(View p1) {
-            ((Button) map.get("action")).setText("Pause");
-            ((Button) map.get("action")).setOnClickListener(new TriggerResumeMusic());
-
             Pause();
         }
     }
@@ -193,6 +299,7 @@ public class ExMusicPlayer extends MusicPlayer {
         @Override
         public void onClick(View p1) {
             PlayNext();
+            displayer.notifySeekUpdate(getCurrentTimeNow());
         }
     }
 
@@ -214,19 +321,6 @@ public class ExMusicPlayer extends MusicPlayer {
         }
     }
 
-    class CallerPlayModeChange implements OnPlayModeChange {
-        @Override
-        public void OnPlayModeChange(MusicPlayer.PlayChangeMode _mode) {
-            if (_mode == PlayChangeMode.Loop)
-                ((Button) map.get("statu")).setText("Loop");
-            if (_mode == PlayChangeMode.Shuffle)
-                ((Button) map.get("statu")).setText("Shuffle");
-            if (_mode == PlayChangeMode.Normal)
-                ((Button) map.get("statu")).setText("Normal");
-            Log.d("PlayStatu", "onPlayModeChange()");
-        }
-    }
-
     class TriggerPlayPrevious implements OnClickListener {
         TimeoutCaller caller = new TimeoutCaller();
         Handler h = new Handler();
@@ -241,19 +335,19 @@ public class ExMusicPlayer extends MusicPlayer {
                 Integer offset = getCurrentTimeNow() - rec;
                 if (offset < reflect_time) {
                     PlayPrevious();
+                    displayer.notifySeekUpdate(getCurrentTimeNow());
                     rec = -1;
                 }
             }
         }
 
         class TimeoutCaller implements Runnable {
-            Object locker = new Object();
-
             @Override
             public void run() {
                 try {
                     if (rec >= 0)
                         Replay();
+                    displayer.notifySeekUpdate(getCurrentTimeNow());
                 } catch (Exception e) {
                     e.fillInStackTrace();
                     SendErrorMsg(e.getMessage());
@@ -264,71 +358,18 @@ public class ExMusicPlayer extends MusicPlayer {
         }
     }
 
-    class TimerDisplayer {
-        Handler handler;
-        boolean isExit = false;
-
-        public TimerDisplayer(Handler _h) {
-            handler = _h;
-        }
-
-        public void notifyThreadCall() {
-            try {
-                while (!isExit) {
-                    Thread.currentThread().sleep(1000, 0);
-                    notifyUpdate();
-                }
-            } catch (Exception e) {
-                SendErrorMsg(e.getMessage());
-            }
-        }
-
-        public void notifyUpdate() {
-            handler.post(new UpdateTime());
-        }
-
-        public void notifySeekUpdate(int cur_time) {
-            int min, sec, max_min, max_sec;
-            int t = getSongLength();
-            max_min = t / 1000 / 60;
-            max_sec = (t - max_min * 60000) / 1000;
-            t = cur_time;
-            min = t / 1000 / 60;
-            sec = (t - min * 60000) / 1000;
-            ((TextView) map.get("status")).setText(String.format("%d:%d - %d:%d", min, sec, max_min, max_sec));
-        }
-    }
-
-    class UpdateTime implements Runnable {
-        @Override
-        public void run() {
-            int min, sec, max_min, max_sec;
-            if (ableUpdateTime) {
-                ((SeekBar) map.get("seekbar")).setProgress((int) (((getCurrentTimeNow() * 1.0f) / getSongLength()) * 100));
-            }
-            int t = getSongLength();
-            max_min = t / 1000 / 60;
-            max_sec = (t - max_min * 60000) / 1000;
-            t = getCurrentTimeNow();
-            min = t / 1000 / 60;
-            sec = (t - min * 60000) / 1000;
-            ((TextView) map.get("status")).setText(String.format("%d:%d - %d:%d", min, sec, max_min, max_sec));
-        }
-    }
-
     class TriggerSeekTime implements OnSeekBarChangeListener {
-        int sum = 0;
-
         @Override
         public void onStartTrackingTouch(SeekBar p1) {
-            ableUpdateTime = false;
+            displayer.StopDisplay();
         }
 
         @Override
         public void onStopTrackingTouch(SeekBar p1) {
             int pos = p1.getProgress() == 100 ? getSongLength() - 1 : (int) (p1.getProgress() / 100.0f * getSongLength());
             JumpTo(pos, 0, false);
-            ableUpdateTime = true;
+            if (!IsPause())
+                displayer.StartDisplay();
         }
 
         @Override
@@ -341,7 +382,6 @@ public class ExMusicPlayer extends MusicPlayer {
     class TriggerStop implements OnClickListener {
         @Override
         public void onClick(View p1) {
-            ((TextView) map.get("status")).setText("Stop");
             Stop();
         }
     }
@@ -400,13 +440,15 @@ public class ExMusicPlayer extends MusicPlayer {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         playlist_name = null;
-                        on_default_playlistadd.onClick(null);
+                        ((TriggerPlayListSave) callbackmap.get("playlistsave")).onClick(null);
                     }
                 });
                 builder.show();
             }
         }
     }
+
+    //callback from base MusicPlayer and then you can update your UI with them.
 
     class TriggerPlayListLoad implements OnClickListener {
         @Override
@@ -442,45 +484,6 @@ public class ExMusicPlayer extends MusicPlayer {
                     }
                 });
             }
-                /*
-                 for (String name : musicDataBase.getAllPlayList())
-                     listViewer.addPlayListName(name);
-                builder.setView(listViewer);
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                  @Override
-                   public void onClick(DialogInterface dialogInterface, int i) {
-
-                  }
-                  });
-                builder.setPositiveButton("Select", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String name = listViewer.getResult();
-                        if(name==null)
-                            return;
-                        Song[] songs = musicDataBase.LoadPlayList(name);
-                        if (songs == null){
-                         SendErrorMsg("Cant get any song from playlist because of returning null");
-                         return;
-                         }
-                        else if (songs.length == 0){
-                            SendErrorMsg("Cant get any song from playlist because nothing in it");
-                            return;
-                        }
-                        play_list.clear();
-                        for (Song song : songs)
-                            play_list.add(song);
-                        Reset();
-                    }
-              });
-            }else{
-                builder.setMessage("无任何播放列表!");
-                builder.setNeutralButton("返回", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {}
-                });
-            }
-               */
             builder.show();
         }
     }
@@ -618,4 +621,134 @@ public class ExMusicPlayer extends MusicPlayer {
             }
         }
     }
+
+    class TimerDisplayer {
+        Handler handler;
+        int call_inv = 250;
+        boolean isUpdating = true;
+        UpdateTime updateTime = new UpdateTime();
+
+        public TimerDisplayer(Handler _h) {
+            handler = _h;
+        }
+
+        public void StartDisplay() {
+            handler.postDelayed(updateTime, call_inv);
+            isUpdating = true;
+        }
+
+        public void StopDisplay() {
+            handler.removeCallbacks(updateTime);
+            isUpdating = false;
+        }
+
+        public void notifySeekUpdate(int cur_time) {
+            int min, sec, max_min, max_sec;
+            int t = getSongLength();
+            max_min = t / 1000 / 60;
+            max_sec = (t - max_min * 60000) / 1000;
+            t = cur_time;
+            min = t / 1000 / 60;
+            sec = (t - min * 60000) / 1000;
+            ((TextView) map.get("status")).setText(String.format("%d:%d - %d:%d", min, sec, max_min, max_sec));
+        }
+
+        class UpdateTime implements Runnable {
+            @Override
+            public void run() {
+                int min, sec, max_min, max_sec;
+                if (isUpdating) {
+                    ((SeekBar) map.get("seekbar")).setProgress((int) (((getCurrentTimeNow() * 1.0f) / getSongLength()) * 100));
+                }
+                int t = getSongLength();
+                max_min = t / 1000 / 60;
+                max_sec = (t - max_min * 60000) / 1000;
+                t = getCurrentTimeNow();
+                min = t / 1000 / 60;
+                sec = (t - min * 60000) / 1000;
+                ((TextView) map.get("status")).setText(String.format("%d:%d - %d:%d", min, sec, max_min, max_sec));
+                handler.postDelayed(updateTime, call_inv);
+            }
+        }
+
+    }
+
+    class CallBack_OnPlay implements OnPlay {
+        @Override
+        public void onPlay(int index) {
+            Button btn = ((Button) getWidght("play"));
+            if (btn == null)
+                return;
+            btn.setText("Playing");
+            btn.setOnClickListener((OnClickListener) getCallBack("pause"));
+            ((LyricView) getWidght("lyricview")).Start();
+            displayer.StartDisplay();
+        }
+    }
+
+    class CallBack_OnPause implements OnPause {
+        @Override
+        public void onPause() {
+            Button btn = ((Button) getWidght("pause"));
+            if (btn == null)
+                return;
+            btn.setText("Pause");
+            btn.setOnClickListener((OnClickListener) getCallBack("resume"));
+            displayer.StopDisplay();
+        }
+    }
+
+    class CallBack_OnGetInfo implements OnGetInfo {
+        @Override
+        public void onGetInfo(SongInfo info) {
+            handle.post(new RenderBG(info.Cover));
+            if (info.Cover == null) {
+                ((ImageView) getWidght("cover")).setImageBitmap(null);
+            } else {
+                ((ImageView) getWidght("cover")).setImageBitmap(info.Cover);
+            }
+            ((TextView) getWidght("id")).setText(String.format("%s / %s", info.Index + 1, play_list.size()));
+            ((TextView) getWidght("song")).setText(String.format("%s - %s", info.Artist, info.Title));
+            String lyric_path = info.File_Path.replace(".mp3", ".lrc");
+            ((LyricView) getWidght("lyricview")).setLyricFromFile(lyric_path);
+            ((LyricView) getWidght("lyricview")).Start();
+            Log.d("song info", String.format("%s - %d : %s - %s", info.Encode, info.Index, info.Artist, info.Title));
+        }
+    }
+
+    class CallBack_OnPlayModeChange implements OnPlayModeChange {
+        @Override
+        public void OnPlayModeChange(PlayChangeMode _mode) {
+            if (_mode == PlayChangeMode.Loop)
+                ((Button) getWidght("statu")).setText("Loop");
+            if (_mode == PlayChangeMode.Shuffle)
+                ((Button) getWidght("statu")).setText("Shuffle");
+            if (_mode == PlayChangeMode.Normal)
+                ((Button) getWidght("statu")).setText("Normal");
+            Log.d("PlayStatu", "onPlayModeChange()");
+        }
+    }
+
+    class CallBack_OnStop implements OnStop {
+        @Override
+        public void onStop(Cause cause, Object parma) {
+            ((TextView) getWidght("status")).setText("Stop");
+            displayer.StopDisplay();
+        }
+    }
+
+    class CallBack_OnResume implements OnResume {
+        @Override
+        public void onResume(int playlist_pos) {
+            Button btn = ((Button) getWidght("resume"));
+            if (btn == null)
+                return;
+            btn.setText("Playing");
+            btn.setOnClickListener((OnClickListener) getCallBack("pause"));
+            ((LyricView) getWidght("lyricview")).Start();
+            displayer.StartDisplay();
+
+        }
+    }
+
 }

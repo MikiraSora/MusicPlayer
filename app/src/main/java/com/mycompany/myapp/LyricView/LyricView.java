@@ -37,12 +37,18 @@ public class LyricView extends View {
 
     long time_offset = 0;
 
-    float scroll_shift = 7.5f;
+    float rec_x, rec_y;
+
+    boolean ableDisplay = true;
+
+    float scroll_shift = 107.5f;
     long scroll_time = 0;
     long scroll_init_time = 0;
     long scroll_hint = 500;
     OnScrollFinished trigger_scrollfinish = null;
     OnScrolling trigger_scrolling = null;
+
+    OnRequestShowOrHide trigger_requestShowOrHide = null;
 
     int color_highlight = Color.rgb(0, 0, 255);
     int color_normal = Color.rgb(0, 0, 255);
@@ -50,13 +56,12 @@ public class LyricView extends View {
 
     boolean isScrolling = false;
 
-    int display_line = 12;
+    int display_line = 14;
 
     OnRequestLyric onRequestLyric = null;
 
     public LyricView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs);
-        init(context);
     }
 
     public LyricView(Context context, AttributeSet attrs) {
@@ -65,10 +70,6 @@ public class LyricView extends View {
 
     public LyricView(Context context) {
         this(context, null, 0);
-    }
-
-    private void init(Context context) {
-
     }
 
     public void setOnRequestLyric(OnRequestLyric func) {
@@ -95,6 +96,10 @@ public class LyricView extends View {
 
     public void setOnScrolling(OnScrolling s) {
         trigger_scrolling = s;
+    }
+
+    public void setOnRequestShowOrHide(OnRequestShowOrHide e) {
+        trigger_requestShowOrHide = e;
     }
 
     public void setOnScrollFhinished(OnScrollFinished s) {
@@ -129,6 +134,8 @@ public class LyricView extends View {
     private boolean Check() {
         if (player == null)
             return false;
+        if (ableDisplay == false)
+            return false;
         return sentence != null;
     }
 
@@ -146,9 +153,16 @@ public class LyricView extends View {
         return tmp;
     }
 
-    private String[] getLyric() {
+    private LyricSentence[] getLyric() {
         long timeline = isScrolling ? getSrollTime() : player.getCurrentTimeNow();
-        String[] lyric = new String[display_line];
+        boolean tmpFix = false;
+
+        if (timeline >= (sentence.get(sentence.size() - 1).time)) {
+            timeline = (sentence.get(sentence.size() - 1).time);
+            tmpFix = true;
+        }
+
+        LyricSentence[] lyric = new LyricSentence[display_line];
         int pos = 0;
         while (pos != sentence.size()) {
             LyricSentence lyricSentence = sentence.get(pos);
@@ -157,7 +171,7 @@ public class LyricView extends View {
                 //curtten pos in sentences
                 int base_pos = pos - (display_line / 2) - 1;
                 for (int i = 0; i < display_line; i++) {
-                    lyric[i] = getLyricSentence(base_pos + i).content;
+                    lyric[i] = getLyricSentence(base_pos + i);
                 }
                 break;
             }
@@ -168,6 +182,7 @@ public class LyricView extends View {
 
     public void setLyric(String text) {
         sentence = LyricDecoder.parseToSentence(text);
+        LyricDecoder.rearrangeLyricSentence(sentence);
         if (onRequestLyric != null && sentence.size() == 0)
             sentence = onRequestLyric.onRequestLyric();
         if (sentence.size() == 0)
@@ -189,6 +204,18 @@ public class LyricView extends View {
         }
     }
 
+    public void Hide() {
+        ableDisplay = false;
+    }
+
+    public void Show() {
+        ableDisplay = true;
+    }
+
+    public boolean isHide() {
+        return !ableDisplay;
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -198,12 +225,14 @@ public class LyricView extends View {
 
         int width = canvas.getWidth(), height = canvas.getHeight();
         int perHeight = height / display_line;
-        String[] lyric = getLyric();
+        LyricSentence[] lyric = getLyric();
         Paint paint = new Paint();
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setAntiAlias(true);
         paint.setTextSize(45);
+        int center_line = display_line / 2;
         int extra_line = 0;
+        int fix_pos = 0;
         switch (displayType) {
             case FideOut: {
                 for (int i = 0; i < display_line; i++) {
@@ -213,14 +242,19 @@ public class LyricView extends View {
                         paint.setAlpha(255 / (2 * display_line) * (display_line - i));
                     }
                     paint.setARGB(paint.getAlpha(), Color.red(color_normal), Color.green(color_normal), Color.blue(color_normal));
-                    if (i == display_line / 2) {
+                    if (lyric[i] == null)
+                        continue;
+
+                    if (lyric[i].time == lyric[center_line].time) {
                         paint.setAlpha(255);
                         paint.setARGB(paint.getAlpha(), Color.red(color_highlight), Color.green(color_highlight), Color.blue(color_highlight));
+                        fix_pos++;
                     }
 
-                    if (lyric[i] == null)
-                        lyric[i] = new String();
-                    extra_line = DrawText(lyric[i], canvas, paint, i, extra_line);
+                    if (lyric[i].content.length() == 0)
+                        lyric[i].content = new String();
+
+                    extra_line = DrawText(lyric[i].content, canvas, paint, i, extra_line);
                 }
                 break;
             }
@@ -238,15 +272,20 @@ public class LyricView extends View {
         canvas.drawLine(sX, sY, eX, eY, scroll_paint);
         long nowTime = getSrollTime();
         String timeStr = coverTimeToString(nowTime);
-        canvas.drawText(timeStr, 0, timeStr.length(), sX, sY + 45, scroll_paint);
+        canvas.drawText(timeStr, 0, timeStr.length(), sX, sY, scroll_paint);
     }
 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean res = super.onTouchEvent(event);
-        if (!Check())
+        /*
+        if (!Check()){
+            if(!ableDisplay)
+                if(trigger_requestShowOrHide!=null)
+                    trigger_requestShowOrHide.onRequestShowOrHide();
             return false;
+        }*/
 
         switch (event.getAction()) {
 
@@ -256,13 +295,22 @@ public class LyricView extends View {
                 isScrolling = true;
                 scroll_time = player.getCurrentTimeNow();
                 scroll_init_time = player.getCurrentTimeNow();
+                rec_x = event.getX();
+                rec_y = event.getY();
                 break;
 
             case MotionEvent.ACTION_UP:
                 isScrolling = false;
                 if (Math.abs(getSrollTime() - scroll_init_time) > scroll_hint) {
+                    if (!Check())
+                        break;
                     if (trigger_scrollfinish != null)
                         trigger_scrollfinish.onScrolliFinished((int) getSrollTime());
+                }
+                float _x = event.getX(), _y = event.getY();
+                if (_x == rec_x && _y == rec_y) {
+                    if (trigger_requestShowOrHide != null)
+                        trigger_requestShowOrHide.onRequestShowOrHide();
                 }
                 break;
 
@@ -270,9 +318,15 @@ public class LyricView extends View {
             case MotionEvent.ACTION_MOVE:
                 if (!isScrolling)
                     break;
+                if (!Check())
+                    break;
                 float x = event.getX(), y = event.getY();
+                if (x == prev_x && y == prev_y)
+                    break;
                 float inv_y = y - prev_y;
-                ScrollLyric(inv_y);
+                ScrollLyric(-inv_y);
+                prev_x = event.getX();
+                prev_y = event.getY();
                 break;
 
 
@@ -341,6 +395,10 @@ public class LyricView extends View {
 
     public interface OnScrollFinished {
         void onScrolliFinished(int time);
+    }
+
+    public interface OnRequestShowOrHide {
+        void onRequestShowOrHide();
     }
 
     class DrawingLooper implements Runnable {
