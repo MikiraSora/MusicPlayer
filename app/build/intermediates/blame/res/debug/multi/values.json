@@ -1,0 +1,484 @@
+[
+    {
+        "outputFile": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 372,
+                    "endColumn": 57,
+                    "endOffset": 425
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 90,
+                        "endColumn": 57,
+                        "endOffset": 143
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 430,
+                    "endColumn": 55,
+                    "endOffset": 481
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 149,
+                        "endColumn": 55,
+                        "endOffset": 200
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 486,
+                    "endColumn": 74,
+                    "endOffset": 556
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\24.0.0\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 372,
+                        "endColumn": 74,
+                        "endOffset": 442
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 561,
+                    "endColumn": 75,
+                    "endOffset": 632
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\24.0.0\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 447,
+                        "endColumn": 75,
+                        "endOffset": 518
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 637,
+                    "endColumn": 71,
+                    "endOffset": 704
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\24.0.0\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 523,
+                        "endColumn": 71,
+                        "endOffset": 590
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 709,
+                    "endColumn": 55,
+                    "endOffset": 760
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 382,
+                        "endColumn": 55,
+                        "endOffset": 433
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 765,
+                    "endColumn": 65,
+                    "endOffset": 826
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\24.0.0\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 595,
+                        "endColumn": 65,
+                        "endOffset": 656
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 831,
+                    "endColumn": 57,
+                    "endOffset": 884
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1221,
+                        "endColumn": 57,
+                        "endOffset": 1274
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 889,
+                    "endColumn": 52,
+                    "endOffset": 937
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1280,
+                        "endColumn": 52,
+                        "endOffset": 1328
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 942,
+                    "endColumn": 48,
+                    "endOffset": 986
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 48,
+                        "endOffset": 100
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 991,
+                    "endColumn": 52,
+                    "endOffset": 1039
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 52,
+                        "endOffset": 153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1044,
+                    "endColumn": 75,
+                    "endOffset": 1115
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1144,
+                        "endColumn": 75,
+                        "endOffset": 1215
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1120,
+                    "endColumn": 73,
+                    "endOffset": 1189
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1070,
+                        "endColumn": 73,
+                        "endOffset": 1139
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1194,
+                    "endColumn": 69,
+                    "endOffset": 1259
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 69,
+                        "endOffset": 456
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1264,
+                    "endColumn": 91,
+                    "endOffset": 1351
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 461,
+                        "endColumn": 91,
+                        "endOffset": 548
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1356,
+                    "endColumn": 77,
+                    "endOffset": 1429
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 213,
+                        "endColumn": 77,
+                        "endOffset": 286
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1434,
+                    "endColumn": 99,
+                    "endOffset": 1529
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 291,
+                        "endColumn": 99,
+                        "endOffset": 386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1534,
+                    "endColumn": 53,
+                    "endOffset": 1583
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 159,
+                        "endColumn": 53,
+                        "endOffset": 208
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1588,
+                    "endColumn": 112,
+                    "endOffset": 1696
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 553,
+                        "endColumn": 112,
+                        "endOffset": 661
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1701,
+                    "endColumn": 175,
+                    "endOffset": 1872
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 666,
+                        "endColumn": 175,
+                        "endOffset": 837
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1877,
+                    "endColumn": 66,
+                    "endOffset": 1939
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 842,
+                        "endColumn": 66,
+                        "endOffset": 904
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1944,
+                    "endColumn": 52,
+                    "endOffset": 1992
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 910,
+                        "endColumn": 52,
+                        "endOffset": 958
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1997,
+                    "endColumn": 52,
+                    "endOffset": 2045
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 963,
+                        "endColumn": 52,
+                        "endOffset": 1011
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 2050,
+                    "endColumn": 52,
+                    "endOffset": 2098
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1016,
+                        "endColumn": 52,
+                        "endOffset": 1064
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 2103,
+                    "endLine": 28,
+                    "endColumn": 9,
+                    "endOffset": 2177
+                },
+                "from": {
+                    "file": "H:\\MusicPlayer\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 3,
+                        "endColumn": 9,
+                        "endOffset": 129
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -249,6 +249,7 @@ public class EncodedText {
         }
     }
 
+    /*
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -261,7 +262,7 @@ public class EncodedText {
         if (textEncoding != other.textEncoding)
             return false;
         return Arrays.equals(value, other.value);
-    }
+    }*/
 
     protected static byte[] charBufferToBytes(CharBuffer charBuffer, String characterSet) throws CharacterCodingException {
         Charset charset = Charset.forName(characterSet);

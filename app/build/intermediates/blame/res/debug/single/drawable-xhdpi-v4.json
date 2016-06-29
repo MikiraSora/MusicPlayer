@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_keyboard_backspace_black_48dp.png",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\drawable-xhdpi\\ic_keyboard_backspace_black_48dp.png"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_insert_drive_file_black_48dp.png",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\drawable-xhdpi\\ic_insert_drive_file_black_48dp.png"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_drawer.png",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\drawable-xhdpi\\ic_drawer.png"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_folder_black_48dp.png",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\drawable-xhdpi\\ic_folder_black_48dp.png"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\drawer_shadow.9.png",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\drawable-xhdpi\\drawer_shadow.9.png"
+    }
+]

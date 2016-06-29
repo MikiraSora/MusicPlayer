@@ -70,16 +70,14 @@ public class MainActivity extends Activity
 				if (lyricView.isHide()) {
 					lyricView.Show();
 					findViewById(R.id.mainImageView1).setVisibility(View.INVISIBLE);
-					Log.i("LyricView", "Show");
 				} else {
 					lyricView.Hide();
 					findViewById(R.id.mainImageView1).setVisibility(View.VISIBLE);
-					Log.i("LyricView", "Hide");
 				}
 
 			}
 		});
-
+		Cache.Init(this);
 		mplayer.bindLyricView(lyricView);
 	}
 }

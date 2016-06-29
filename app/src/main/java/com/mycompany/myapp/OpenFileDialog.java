@@ -8,24 +8,26 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+
 import java.util.regex.Pattern;
-//import android.*;
 
 
 /**
@@ -512,7 +514,7 @@ class OpenFileDialog extends Dialog {
     }
 
     private class FileListRecyclerViewAdapter extends RecyclerView.Adapter<FileListRecyclerViewAdapter.ViewHolder> {
-        private List<FileItem> mFileList = new ArrayList<>();
+        private List<FileItem> mFileList = new ArrayList<FileItem>();
 
         public FileListRecyclerViewAdapter() {
             if (mPath != null) {
@@ -643,13 +645,6 @@ class OpenFileDialog extends Dialog {
                     String l = lhs == null ? "" : lhs.getName().toLowerCase();
                     String r = rhs == null ? "" : rhs.getName().toLowerCase();
                     return l.compareTo(r);
-                    /*
-					try{
-                    return lhs.getName().compareTo(rhs.getName());
-					}catch(Exception e){
-						e.fillInStackTrace();
-					}
-					return 0;*/
                 }
             });
             for (File file : fileArr) {
