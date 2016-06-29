@@ -31,7 +31,7 @@ public class LyricView extends View {
     Handler handler = new Handler();
     DrawingLooper drawingLooper = new DrawingLooper();
 
-    int update_inv = 100;
+    int update_inv = 75;
 
     float prev_x = 0, prev_y = 0;
 
@@ -56,7 +56,7 @@ public class LyricView extends View {
 
     boolean isScrolling = false;
 
-    int display_line = 14;
+    int display_line = 15;
 
     OnRequestLyric onRequestLyric = null;
 
@@ -157,19 +157,21 @@ public class LyricView extends View {
         long timeline = isScrolling ? getSrollTime() : player.getCurrentTimeNow();
         boolean tmpFix = false;
 
-        if (timeline >= (sentence.get(sentence.size() - 1).time)) {
-            timeline = (sentence.get(sentence.size() - 1).time);
+            if (timeline >= (sentence.get(sentence.size() - 1).time)) {
+            timeline = (sentence.get(sentence.size() - 1).time+1);
             tmpFix = true;
-        }
+        }else if(timeline<sentence.get(0).time){
+                timeline=sentence.get(0).time-1;
+            }
 
         LyricSentence[] lyric = new LyricSentence[display_line];
         int pos = 0;
         while (pos != sentence.size()) {
             LyricSentence lyricSentence = sentence.get(pos);
-            LyricSentence prevLyricSentence = getLyricSentence(pos - 1);
-            if ((timeline >= prevLyricSentence.time) && (timeline <= lyricSentence.time)) {
+            LyricSentence nextLyricSentence = getLyricSentence(pos + 1);
+            if (((timeline <= nextLyricSentence.time) && (timeline >= lyricSentence.time))||(timeline<getLyricSentence(0).time)) {
                 //curtten pos in sentences
-                int base_pos = pos - (display_line / 2) - 1;
+                int base_pos = pos - (display_line / 2);
                 for (int i = 0; i < display_line; i++) {
                     lyric[i] = getLyricSentence(base_pos + i);
                 }
@@ -230,25 +232,28 @@ public class LyricView extends View {
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setAntiAlias(true);
         paint.setTextSize(45);
-        int center_line = display_line / 2;
+        int center_line = display_line / 2 ;
         int extra_line = 0;
-        int fix_pos = 0;
+        ArrayList<LyricSentence> center_lyric=new ArrayList<LyricSentence>();
         switch (displayType) {
             case FideOut: {
                 for (int i = 0; i < display_line; i++) {
-                    if (i <= (display_line / 2)) {
-                        paint.setAlpha(255 / (2 * display_line) * (i + 1));
+
+                    if (i < (display_line / 2)) {
+                        paint.setAlpha(255 / (2 * display_line) * (i));
                     } else if (i > display_line / 2) {
                         paint.setAlpha(255 / (2 * display_line) * (display_line - i));
                     }
                     paint.setARGB(paint.getAlpha(), Color.red(color_normal), Color.green(color_normal), Color.blue(color_normal));
+
+                    //paint.setARGB(paint.getAlpha(), Color.red(color_normal), Color.green(color_normal), Color.blue(color_normal));
+                    //paint.setAlpha((int)(255*0.5));
                     if (lyric[i] == null)
                         continue;
 
                     if (lyric[i].time == lyric[center_line].time) {
                         paint.setAlpha(255);
                         paint.setARGB(paint.getAlpha(), Color.red(color_highlight), Color.green(color_highlight), Color.blue(color_highlight));
-                        fix_pos++;
                     }
 
                     if (lyric[i].content.length() == 0)
@@ -269,7 +274,7 @@ public class LyricView extends View {
         if (!isScrolling)
             return;
         int sX = 0, sY = canvas.getHeight() / 2, eX = canvas.getWidth(), eY = sY;
-        canvas.drawLine(sX, sY, eX, eY, scroll_paint);
+        canvas.drawLine(sX, sY-50, eX, eY-50, scroll_paint);
         long nowTime = getSrollTime();
         String timeStr = coverTimeToString(nowTime);
         canvas.drawText(timeStr, 0, timeStr.length(), sX, sY, scroll_paint);

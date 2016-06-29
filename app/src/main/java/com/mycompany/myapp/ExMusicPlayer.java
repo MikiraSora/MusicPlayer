@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 
 import com.mycompany.myapp.LyricView.LyricView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,6 +48,7 @@ public class ExMusicPlayer extends MusicPlayer {
     TriggerPlayListAdd on_default_playlistadd = new TriggerPlayListAdd();
     TriggerSeekTime on_default_seektime = new TriggerSeekTime();
 
+    Cache.OnRequestFile on_default_requestfile=new TriggerBlurRequestFile();
 
     boolean ableUpdateTime = true;
     boolean alreayStarted = false;
@@ -109,10 +112,10 @@ public class ExMusicPlayer extends MusicPlayer {
         return trigger;
     }
 
-    void setGetInfoTrigger(TriggerOnGetInfo trigger) {
+    /*void setGetInfoTrigger(TriggerOnGetInfo trigger) {
         callbackmap.put("getinfo", trigger);
     }
-
+*/
     OnClickListener setPlayListAddTrigger(TriggerPlayListAdd trigger) {
         callbackmap.put("playlistadd", trigger);
         return trigger;
@@ -231,45 +234,50 @@ public class ExMusicPlayer extends MusicPlayer {
         return null;
     }
 
-    class TriggerOnGetInfo implements OnGetInfo {
-        @Override
-        public void onGetInfo(MusicPlayer.SongInfo info) {
-            handle.post(new RenderBG(info.Cover));
-            if (info.Cover == null) {
-                ((ImageView) map.get("cover")).setImageBitmap(null);
-            } else {
-                ((ImageView) map.get("cover")).setImageBitmap(info.Cover);
-            }
-            ((TextView) map.get("id")).setText(String.format("%s / %s", info.Index + 1, play_list.size()));
-            ((TextView) map.get("song")).setText(String.format("%s - %s", info.Artist, info.Title));
-            String lyric_path = info.File_Path.replace(".mp3", ".lrc");
-            ((LyricView) map.get("lyricview")).setLyricFromFile(lyric_path);
-            ((LyricView) map.get("lyricview")).Start();
-            Log.d("song info", String.format("%s - %d : %s - %s", info.Encode, info.Index, info.Artist, info.Title));
-        }
-
-    }
-
     class RenderBG implements Runnable {
         Bitmap src = null;
+        String path=null;
+        OnGetCacheRequest request=new OnGetCacheRequest();
 
         private RenderBG() {
         }
 
-        public RenderBG(Bitmap _src) {
+        public RenderBG(Bitmap _src,String abs_path) {
             src = _src;
+            path=abs_path;
         }
 
         @Override
         public void run() {
+            Bitmap bmp=null;
+            ImageView iv = (ImageView) map.get("bg");
             try {
-                ImageView iv = (ImageView) map.get("bg");
+
                 if (src == null)
-                    iv.setImageBitmap(null);
-                else
-                    iv.setImageBitmap(Blur.DoBlurWithScale(src, 25.0f, 0.4f));
+                    bmp=null;
+                else{
+                    byte[] buffer=Cache.getCacheData(path,request);
+                    bmp=BitmapFactory.decodeByteArray(buffer,0,buffer.length);
+                }
             } catch (Exception e) {
                 SendErrorMsg(e.getMessage());
+            }
+            iv.setImageBitmap(bmp);
+        }
+
+        class OnGetCacheRequest implements Cache.OnRequestFile{
+            @Override
+            public byte[] onRequestFile(String abs_path) {
+                try {
+                    Bitmap bmp = Blur.DoBlurWithScale(src, 25.0f, 0.4f);
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                    byte[] buffer = baos.toByteArray();
+                    return buffer;
+                }catch (Exception e){
+                    //TODO
+                }
+                return null;
             }
         }
     }
@@ -622,6 +630,13 @@ public class ExMusicPlayer extends MusicPlayer {
         }
     }
 
+    class TriggerBlurRequestFile implements Cache.OnRequestFile{
+        @Override
+        public byte[] onRequestFile(String abs_path) {
+            return new byte[0];
+        }
+    }
+
     class TimerDisplayer {
         Handler handler;
         int call_inv = 250;
@@ -701,7 +716,7 @@ public class ExMusicPlayer extends MusicPlayer {
     class CallBack_OnGetInfo implements OnGetInfo {
         @Override
         public void onGetInfo(SongInfo info) {
-            handle.post(new RenderBG(info.Cover));
+            handle.post(new RenderBG(info.Cover,info.File_Path));
             if (info.Cover == null) {
                 ((ImageView) getWidght("cover")).setImageBitmap(null);
             } else {

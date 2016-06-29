@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\menu\\global.xml",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\menu\\global.xml"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_player.xml",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\menu\\main_player.xml"
+    }
+]
