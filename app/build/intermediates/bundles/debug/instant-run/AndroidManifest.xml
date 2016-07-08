@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="19"
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
+        name="com.mycompany.myapp.ParameterSender"
         android:name="com.android.tools.fd.runtime.BootstrapApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -31,9 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.mikirasora.musicplayer.main_player"
-            android:label="@string/title_activity_main_player" />
+        <activity android:name="com.mycompany.myapp.Activities.PlayListSelection" />
+        <activity android:name="com.mycompany.myapp.Activities.Selection.SelectionActivity" />
     </application>
 
 </manifest>

@@ -34,6 +34,18 @@ public class Cache {
         cache=new CacheDataBase(ctx);
     }
 
+    public static FileInputStream getCacheStream(String abs_path,OnRequestFile failedCallback)throws Exception{
+        String cacheId=cache.getID(abs_path);
+        File cacheFile=getCacheFile(cacheId);
+        if(!cacheFile.exists()){
+            byte[] buffer= failedCallback!=null?failedCallback.onRequestFile(abs_path):null;
+            saveCacheData(abs_path, buffer);
+            return getCacheStream(abs_path,failedCallback);
+        }
+        FileInputStream fileInputStream=new FileInputStream(cacheFile);
+        return fileInputStream;
+    }
+
     public static byte[] getCacheData(String abs_path,OnRequestFile failedCallback)throws Exception{
         String cacheId=cache.getID(abs_path);
         File cacheFile=getCacheFile(cacheId);

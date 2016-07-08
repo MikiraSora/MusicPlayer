@@ -156,15 +156,23 @@ public class LyricView extends View {
     private LyricSentence[] getLyric() {
         long timeline = isScrolling ? getSrollTime() : player.getCurrentTimeNow();
         boolean tmpFix = false;
-
+        LyricSentence[] lyric = new LyricSentence[display_line];
             if (timeline >= (sentence.get(sentence.size() - 1).time)) {
             timeline = (sentence.get(sentence.size() - 1).time+1);
             tmpFix = true;
         }else if(timeline<sentence.get(0).time){
-                timeline=sentence.get(0).time-1;
+                int t=(int)((sentence.get(0).time-timeline)/1000)+1;
+                int pos=0;
+                for(int i=0;i<t;i++)
+                    pos--;
+                int base_pos = pos - (display_line / 2);
+                for (int i = 0; i < display_line; i++) {
+                    lyric[i] = getLyricSentence(base_pos + i);
+                }
+                return lyric;
             }
 
-        LyricSentence[] lyric = new LyricSentence[display_line];
+
         int pos = 0;
         while (pos != sentence.size()) {
             LyricSentence lyricSentence = sentence.get(pos);

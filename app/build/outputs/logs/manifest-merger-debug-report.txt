@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-33:12
 	xmlns:android
 		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -34,35 +34,39 @@ ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:11:5-30:19
 MERGED from [com.android.support:support-v4:24.0.0] H:\MusicPlayer\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:24.0.0] H:\MusicPlayer\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:15:9-41
 	android:allowBackup
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:13:9-35
 	android:icon
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:13:9-45
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:14:9-45
 	android:theme
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:15:9-40
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:16:9-40
+	android:name
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:12:9-40
 activity#com.mycompany.myapp.MainActivity
-ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:18:9-26:20
+ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:19:9-27:20
 	android:label
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:20:13-45
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:21:13-45
 	android:name
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:19:13-41
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:20:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:21:13-25:29
+ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:22:17-69
+ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:22:25-66
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:24:27-74
-activity#com.mikirasora.musicplayer.main_player
-ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:27:9-29:75
-	android:label
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:29:13-63
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:25:27-74
+activity#com.mycompany.myapp.Activities.PlayListSelection
+ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:28:9-66
 	android:name
-		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:28:13-66
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:28:19-63
+activity#com.mycompany.myapp.Activities.Selection.SelectionActivity
+ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:29:9-76
+	android:name
+		ADDED from H:\MusicPlayer\app\src\main\AndroidManifest.xml:29:19-73
 uses-sdk
 INJECTED from H:\MusicPlayer\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:recyclerview-v7:24.0.0] H:\MusicPlayer\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0\AndroidManifest.xml:20:5-43

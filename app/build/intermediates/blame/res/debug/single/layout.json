@@ -1,10 +1,26 @@
 [
     {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_selection_playlist.xml",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\layout\\item_selection_playlist.xml"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_playlistselection.xml",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\layout\\item_playlistselection.xml"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_head_playlistselection.xml",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\layout\\item_head_playlistselection.xml"
+    },
+    {
         "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\layout\\open_file_dialog_item_layout.xml",
         "source": "H:\\MusicPlayer\\app\\src\\main\\res\\layout\\open_file_dialog_item_layout.xml"
     },
     {
         "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
         "source": "H:\\MusicPlayer\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "H:\\MusicPlayer\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_selection.xml",
+        "source": "H:\\MusicPlayer\\app\\src\\main\\res\\layout\\layout_selection.xml"
     }
 ]

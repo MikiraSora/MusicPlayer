@@ -80,6 +80,8 @@ public class ExMusicPlayer extends MusicPlayer {
         return getPlayer();
     }
 
+    String getCurrentPlayListName(){return playlist_name;}
+
     OnClickListener setPlayTrigger(TriggerPlay trigger) {
         callbackmap.put("play", trigger);
         return trigger;
@@ -227,6 +229,12 @@ public class ExMusicPlayer extends MusicPlayer {
         callbackmap.put(name, callback);
     }
 
+    public Song[] getCurrentPlayList(){
+        Song[] songs=new Song[play_list.size()];
+        play_list.toArray(songs);
+        return songs;
+    }
+
     Object getCallBack(String name) {
         if (callbackmap.containsKey(name))
             return callbackmap.get(name);
@@ -256,7 +264,7 @@ public class ExMusicPlayer extends MusicPlayer {
                 if (src == null)
                     bmp=null;
                 else{
-                    byte[] buffer=Cache.getCacheData(path,request);
+                    byte[] buffer=Cache.getCacheData(path+"_r",request);
                     bmp=BitmapFactory.decodeByteArray(buffer,0,buffer.length);
                 }
             } catch (Exception e) {
@@ -268,6 +276,7 @@ public class ExMusicPlayer extends MusicPlayer {
         class OnGetCacheRequest implements Cache.OnRequestFile{
             @Override
             public byte[] onRequestFile(String abs_path) {
+                Log.i("RenderBG","using Dym-Blur picture");
                 try {
                     Bitmap bmp = Blur.DoBlurWithScale(src, 25.0f, 0.4f);
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -470,6 +479,7 @@ public class ExMusicPlayer extends MusicPlayer {
                 builder.setItems(allPlayList, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        playlist_name=allPlayList[i];
                         Song[] songs = musicDataBase.LoadPlayList(allPlayList[i]);
                         if (songs == null) {
                             SendErrorMsg("Cant get any song from playlist because of returning null");
@@ -715,19 +725,19 @@ public class ExMusicPlayer extends MusicPlayer {
 
     class CallBack_OnGetInfo implements OnGetInfo {
         @Override
-        public void onGetInfo(SongInfo info) {
-            handle.post(new RenderBG(info.Cover,info.File_Path));
+        public void onGetInfo(Song info) {
+            handle.post(new RenderBG(info.Cover,info.AbsFile_Path));
             if (info.Cover == null) {
                 ((ImageView) getWidght("cover")).setImageBitmap(null);
             } else {
                 ((ImageView) getWidght("cover")).setImageBitmap(info.Cover);
             }
-            ((TextView) getWidght("id")).setText(String.format("%s / %s", info.Index + 1, play_list.size()));
+            ((TextView) getWidght("id")).setText(String.format("%s / %s", info.PlayListId + 1, play_list.size()));
             ((TextView) getWidght("song")).setText(String.format("%s - %s", info.Artist, info.Title));
-            String lyric_path = info.File_Path.replace(".mp3", ".lrc");
+            String lyric_path = info.AbsFile_Path.replace(".mp3", ".lrc");
             ((LyricView) getWidght("lyricview")).setLyricFromFile(lyric_path);
             ((LyricView) getWidght("lyricview")).Start();
-            Log.d("song info", String.format("%s - %d : %s - %s", info.Encode, info.Index, info.Artist, info.Title));
+            Log.d("song info", String.format("%d : %s - %s",info.PlayListId, info.Artist, info.Title));
         }
     }
 

@@ -1,6 +1,7 @@
 package com.mycompany.myapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.SeekBar;
 
+import com.mycompany.myapp.Activities.PlayListSelection;
+import com.mycompany.myapp.Activities.Selection.SelectionActivity;
 import com.mycompany.myapp.LyricView.LyricView;
 
 import java.util.HashMap;
@@ -79,6 +82,33 @@ public class MainActivity extends Activity
 		});
 		Cache.Init(this);
 		mplayer.bindLyricView(lyricView);
+
+		final Activity curActivity=this;
+
+		Button playlist=(Button)findViewById(R.id.playlist);
+		playlist.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				String name=mplayer.getCurrentPlayListName();
+				Intent intent=new Intent();
+				intent.setClass(MainActivity.this, PlayListSelection.class);
+				Log.d("MainActivity",String.format("now put %s into intent",name));
+				((ParameterSender)getApplicationContext()).putObject("musicplayer",mplayer);
+				intent.putExtra("playlist_name",name);
+				MainActivity.this.startActivity(intent);
+			}
+		});
+		playlist=(Button)findViewById(R.id.selection);
+		playlist.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent=new Intent();
+				intent.setClass(MainActivity.this, SelectionActivity.class);
+				//Log.d("MainActivity",String.format("now put %s into intent",name));
+				//intent.putExtra("playlist_name",name);
+				MainActivity.this.startActivity(intent);
+			}
+		});
 	}
 }
 

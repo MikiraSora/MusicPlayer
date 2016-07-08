@@ -1,5 +1,7 @@
 package com.mycompany.myapp;
 
+import android.graphics.Bitmap;
+
 import org.json.JSONObject;
 
 /**
@@ -7,6 +9,8 @@ import org.json.JSONObject;
  */
 public class Song {
     public String Title, Artist, AbsFile_Path, Album;
+    Bitmap Cover;
+    int PlayListId=-1;
 
     public static Song parserJSON(String json_str) throws Exception {
         Song song = new Song();
@@ -29,5 +33,10 @@ public class Song {
         jsonObject.put("Title", Title);
 
         return jsonObject.toString();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s - %s ,(%s) from %s",Artist,Title,Album,AbsFile_Path);
     }
 }

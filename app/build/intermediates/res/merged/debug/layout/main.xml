@@ -158,6 +158,23 @@
 				android:layout_alignStart="@+id/open"
 				android:text="delete" />
 
+			<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Playlist"
+				android:id="@+id/playlist"
+				android:layout_alignParentTop="true"
+				android:layout_toLeftOf="@+id/id"
+				android:layout_toStartOf="@+id/id" />
+
+			<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="selection"
+				android:id="@+id/selection"
+				android:layout_alignParentTop="true"
+				android:layout_alignParentEnd="true" />
+
 		</RelativeLayout>
 
 	</LinearLayout>

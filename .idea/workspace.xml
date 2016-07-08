@@ -10,6 +10,16 @@
       </config>
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_head_playlistselection.xml">
+        <config>
+          <theme>@android:style/Theme.Material.NoActionBar.Fullscreen</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_playlistselection.xml">
+        <config>
+          <theme>@android:style/Theme.Material.NoActionBar.Fullscreen</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
         <config>
           <theme>@android:style/Theme.Material.NoActionBar.Fullscreen</theme>
@@ -19,26 +29,53 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
     <option name="LOGCAT_FORMAT_STRING" value="%1$s %4$c/%5$s: %6$s" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64b0c3ae-7447-4b61-bb96-2dbc17640a8a" name="Default" comment="乱写的音乐播放器">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelectionListAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionAdapter/AlbumAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionAdapter/PlayListAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionViewPagerTabAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Syncimageloader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ParameterSender.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Utils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_head_playlistselection.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_playlistselection.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_selection_playlist.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_selection.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/ids.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/mycompany/myapp/LyricView/LyricView$1$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/mycompany/myapp/LyricView/LyricView$DisplayType$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/mycompany/myapp/LyricView/LyricView$DrawingLooper$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/mycompany/myapp/LyricView/LyricView$Status$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/mycompany/myapp/LyricView/LyricView$override.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/buildId.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/Cache$CacheDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/Cache$CacheDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/Cache.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/Cache.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnGetInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnGetInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPause.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlay.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlayModeChange.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlayModeChange.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnResume.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnResume.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnStop.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnStop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$RenderBG$OnGetCacheRequest.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$RenderBG$OnGetCacheRequest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$RenderBG.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$RenderBG.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer$UpdateTime.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer$UpdateTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerBlurRequestFile.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerBlurRequestFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerChangePlayMode.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerChangePlayMode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerPause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerPause.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerPlay.class" />
@@ -66,22 +103,55 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerResume.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerResume.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerSeekTime.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerSeekTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerStop.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer$TriggerStop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/ExMusicPlayer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView$DisplayType.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView$DisplayType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView$DrawingLooper.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView$DrawingLooper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView$Status.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView$Status.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/LyricView/LyricView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$CallerGetSongInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$CallerGetSongInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$OnGetInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$OnGetInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$OnStop$Cause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$OnStop$Cause.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$PlayChangeMode.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$PlayChangeMode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$PlayHistoryRecoder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$PlayHistoryRecoder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$PlayerStatu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$PlayerStatu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$PreparedPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$PreparedPlay.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$SongInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$SongInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$TriggerPlayerComplete.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$TriggerPlayerComplete.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$TriggerPlayerError.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer$TriggerPlayerError.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/MusicPlayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$raw.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$raw.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/Song.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/Song.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/SongInfoParser.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/mycompany/myapp/SongInfoParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/Cache$CacheDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/Cache$CacheDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/Cache.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/Cache.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnGetInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnGetInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPause.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlay.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlayModeChange.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlayModeChange.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnResume.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnResume.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnStop.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$CallBack_OnStop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$RenderBG$OnGetCacheRequest.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$RenderBG$OnGetCacheRequest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$RenderBG.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$RenderBG.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer$UpdateTime.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer$UpdateTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerBlurRequestFile.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerBlurRequestFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerChangePlayMode.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerChangePlayMode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerPause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerPause.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerPlay.class" />
@@ -109,26 +179,63 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerResume.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerResume.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerSeekTime.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerSeekTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerStop.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer$TriggerStop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/ExMusicPlayer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView$DisplayType.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView$DisplayType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView$DrawingLooper.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView$DrawingLooper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView$Status.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView$Status.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/LyricView/LyricView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$CallerGetSongInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$CallerGetSongInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$OnGetInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$OnGetInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$OnStop$Cause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$OnStop$Cause.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$PlayChangeMode.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$PlayChangeMode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$PlayHistoryRecoder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$PlayHistoryRecoder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$PlayerStatu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$PlayerStatu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$PreparedPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$PreparedPlay.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$SongInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$SongInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$TriggerPlayerComplete.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$TriggerPlayerComplete.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$TriggerPlayerError.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer$TriggerPlayerError.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/MusicPlayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$raw.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$raw.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/Song.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/Song.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/SongInfoParser.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/mycompany/myapp/SongInfoParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/classes.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/classes.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/resources.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/resources.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e0ec5c5058405e05b7a45e926b6ccb64d2e6e3a0/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e0ec5c5058405e05b7a45e926b6ccb64d2e6e3a0/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/recyclerview/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/recyclerview/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/Cache$CacheDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/Cache$CacheDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/Cache.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/Cache.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnGetInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnGetInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPause.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlay.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlayModeChange.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlayModeChange.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnResume.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnResume.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnStop.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$CallBack_OnStop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$RenderBG$OnGetCacheRequest.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$RenderBG$OnGetCacheRequest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$RenderBG.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$RenderBG.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer$UpdateTime.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer$UpdateTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerBlurRequestFile.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerBlurRequestFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerChangePlayMode.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerChangePlayMode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerPause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerPause.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerPlay.class" />
@@ -156,20 +263,52 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerResume.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerResume.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerSeekTime.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerSeekTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerStop.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer$TriggerStop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/ExMusicPlayer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView$DisplayType.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView$DisplayType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView$DrawingLooper.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView$DrawingLooper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView$Status.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView$Status.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/LyricView/LyricView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$CallerGetSongInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$CallerGetSongInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$OnGetInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$OnGetInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$OnStop$Cause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$OnStop$Cause.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$PlayChangeMode.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$PlayChangeMode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$PlayHistoryRecoder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$PlayHistoryRecoder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$PlayerStatu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$PlayerStatu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$PreparedPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$PreparedPlay.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$SongInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$SongInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$TriggerPlayerComplete.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$TriggerPlayerComplete.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$TriggerPlayerError.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer$TriggerPlayerError.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/MusicPlayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$raw.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$raw.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/Song.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/mycompany/myapp/Song.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/Cache$CacheDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/Cache$CacheDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/Cache.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/Cache.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnGetInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnGetInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPause.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlay.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlayModeChange.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnPlayModeChange.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnResume.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnResume.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnStop.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$CallBack_OnStop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$RenderBG$OnGetCacheRequest.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$RenderBG$OnGetCacheRequest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$RenderBG.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$RenderBG.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer$UpdateTime.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer$UpdateTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TimerDisplayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerBlurRequestFile.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerBlurRequestFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerChangePlayMode.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerChangePlayMode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerPause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerPause.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerPlay.class" />
@@ -197,6 +336,34 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerResume.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerResume.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerSeekTime.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerSeekTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerStop.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer$TriggerStop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/ExMusicPlayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$CallerGetSongInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$CallerGetSongInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$OnGetInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$OnGetInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$OnStop$Cause.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$OnStop$Cause.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$PlayChangeMode.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$PlayChangeMode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$PlayHistoryRecoder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$PlayHistoryRecoder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$PlayerStatu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$PlayerStatu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$PreparedPlay.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$PreparedPlay.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$SongInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$SongInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$TriggerPlayerComplete.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$TriggerPlayerComplete.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$TriggerPlayerError.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer$TriggerPlayerError.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/MusicPlayer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/OpenFileDialog$FileListRecyclerViewAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$raw.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$raw.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/Song.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_1/com/mycompany/myapp/Song.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_7/android/support/v7/recyclerview/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_7/android/support/v7/recyclerview/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/mycompany/myapp/LyricView/LyricView$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/mycompany/myapp/LyricView/LyricView$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/mycompany/myapp/LyricView/LyricView$DisplayType.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/mycompany/myapp/LyricView/LyricView$DisplayType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/mycompany/myapp/LyricView/LyricView$DrawingLooper.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/mycompany/myapp/LyricView/LyricView$DrawingLooper.class" />
@@ -204,11 +371,35 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/mycompany/myapp/LyricView/LyricView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/mycompany/myapp/LyricView/LyricView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/mycompany/myapp/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/mycompany/myapp/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/bundles/debug/instant-run/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/bundles/debug/instant-run/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/manifest.crc" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/manifest.crc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/reload-changes.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/reload-changes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/main.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Cache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Cache.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Song.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Song.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/SongInfoParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/SongInfoParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
     </list>
     <ignored path="MusicPlayer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -224,121 +415,137 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="MusicPlayer" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+            </PATH>
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="MusicPlayer" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Cache.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Cache.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="LyricView.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricView.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.1985815">
-                  <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-                  <folding>
-                    <element signature="method#setDisplayColor#0;class#LyricView#0" expanded="false" />
-                    <element signature="method#Check#0;class#LyricView#0" expanded="false" />
-                    <element signature="method#setLyric#0;class#LyricView#0" expanded="false" />
-                    <element signature="method#setLyricFromFile#0;class#LyricView#0" expanded="false" />
-                    <element signature="e#6309#6324#0" expanded="true" />
-                    <element signature="method#onTouchEvent#0;class#LyricView#0" expanded="false" />
-                    <element signature="e#10680#10681#0" expanded="true" />
-                    <element signature="e#10714#10715#0" expanded="true" />
-                    <element signature="class#Status#0;class#LyricView#0" expanded="false" />
-                    <element signature="class#DisplayType#0;class#LyricView#0" expanded="false" />
-                    <element signature="class#OnRequestLyric#0;class#LyricView#0" expanded="false" />
-                    <element signature="class#OnScrolling#0;class#LyricView#0" expanded="false" />
-                    <element signature="class#OnScrollFinished#0;class#LyricView#0" expanded="false" />
-                    <element signature="class#OnRequestShowOrHide#0;class#LyricView#0" expanded="false" />
-                    <element signature="class#DrawingLooper#0;class#LyricView#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MusicPlayer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-                  <folding>
-                    <element signature="method#MusicPlayer#1;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#initPlayer#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#addSong#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#Play#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#PlayFirstTime#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#PlayNext#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#Reset#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#Pause#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#Resume#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#Stop#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#setPlayChangeMode#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#SendErrorMsg#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#AddSongToCurrentPlayList#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#getSongInfo#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#PlayChangeMode#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#PlayerStatu#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#OnPlay#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#OnGetInfo#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#OnPlayModeChange#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#OnError#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#OnReset#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#OnPlayFirstTime#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#OnStop#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#SongInfo#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#PlayHistoryRecoder#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#PreparedPlay#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#CallerGetSongInfo#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#se#0;class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="method#onError#0;class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-                    <element signature="class#TriggerPlayerComplete#0;class#MusicPlayer#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ExMusicPlayer.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5851064">
-                  <caret line="299" column="17" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
-                  <folding>
-                    <element signature="method#ExMusicPlayer#0;class#ExMusicPlayer#0" expanded="false" />
-                    <element signature="method#ExMusicPlayer#1;class#ExMusicPlayer#0" expanded="false" />
-                    <element signature="method#getWidght#0;class#ExMusicPlayer#0" expanded="false" />
-                    <element signature="method#getCallBack#0;class#ExMusicPlayer#0" expanded="false" />
-                    <element signature="class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-                    <element signature="method#run#0;class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SelectionActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MusicPlayer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayListSelection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectionViewPagerTabAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionViewPagerTabAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+              <folding>
+                <element signature="e#651#652#0" expanded="true" />
+                <element signature="e#691#692#0" expanded="true" />
+                <element signature="e#1220#1221#0" expanded="true" />
+                <element signature="e#1255#1256#0" expanded="true" />
+                <element signature="e#1318#1319#0" expanded="true" />
+                <element signature="e#1370#1371#0" expanded="true" />
+                <element signature="e#1438#1439#0" expanded="true" />
+                <element signature="e#1491#1492#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayListAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionAdapter/PlayListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="228" column="31" selection-start-line="228" selection-start-column="31" selection-end-line="228" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#9069#10271#0" expanded="true" />
+                <element signature="e#10270#10271#0" expanded="true" />
+                <element signature="e#10756#11979#0" expanded="true" />
+                <element signature="e#11978#11979#0" expanded="true" />
+                <element signature="e#12616#12882#0" expanded="true" />
+                <element signature="e#12881#12882#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LyricDecoder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricDecoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.27353463">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ids.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/ids.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.5714285">
+              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="layoutResourceFile_vertical" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -1663,7 +1870,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4397612487939" />
+        <entry key="$PROJECT_DIR$" value="4398389272401" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1845,7 +2052,7 @@
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3-sources.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/abego/treelayout/org.abego.treelayout.core/1.0.1/org.abego.treelayout.core-1.0.1.jar" />
-                            <option value="H:/Android/Sdk/extras/android/m2repository/com/android/support/recyclerview-v7/24.0.0/recyclerview-v7-24.0.0.aar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/24.0.0/7f284fb9e9e5e58b8cd2c124cab99c6c8f1e08ae/recyclerview-v7-24.0.0.aar" />
                             <option value="H:/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar" />
                             <option value="H:/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/24.0.0/support-v4-24.0.0.aar" />
                           </list>
@@ -1988,21 +2195,41 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Song.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/PlaylistSelectionListViewer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/PlayListAddProcessDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricSentence.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricDecoder.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mpatric/mp3agic/EncodedText.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/OpenFileDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Cache.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/playlistselect.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_head_playlistselection.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_playlist.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelection_Adapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_playlistselection.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Song.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/SongInfoParser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelectionListView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Syncimageloader.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_selection.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/SelectionActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_selection_playlist.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Cache.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelection.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelectionListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionAdapter/AlbumAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionViewPagerTabAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/ids.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ParameterSender.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Utils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionAdapter/PlayListAdapter.java" />
       </list>
     </option>
   </component>
@@ -2036,9 +2263,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -2196,6 +2423,132 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MusicPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MusicPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MusicPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MusicPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Selection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MusicPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MusicPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Selection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SelectionAdapter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -2215,7 +2568,10 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="G:/Netease-Lyric-Parser-For-AndroidApp" />
     <property name="NetworkMonitor.minimized" value="true" />
-    <property name="GpuMonitor.minimized" value="true" />
+    <property name="GpuMonitor.paused" value="false" />
+    <property name="NetworkMonitor.position" value="3" />
+    <property name="GpuMonitor.position" value="2" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="324" />
   </component>
   <component name="Push.Settings">
     <force-push-targets>
@@ -2223,6 +2579,13 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.mycompany.myapp.Activities" />
+      <recent name="layout" />
+    </key>
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\MusicPlayer\app\src\main\java\com\mycompany\myapp\LyricView" />
     </key>
@@ -2550,33 +2913,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
-    <editor active="false" />
+    <frame x="-7" y="0" width="1932" height="1047" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.49786323" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3322072" sideWeight="0.4871795" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.49786323" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.48504272" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39864865" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29954955" sideWeight="0.51282054" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.4957265" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.4957265" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3975225" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.51495725" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.4957265" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.4957265" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.49786323" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.4871795" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18002136" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265766" sideWeight="0.4871795" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2585,29 +2948,29 @@
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29654405" sideWeight="0.4871795" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29954955" sideWeight="0.51282054" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.4957265" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.48504272" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.51495725" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.4957265" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.49786323" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18002136" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265766" sideWeight="0.4871795" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.4871795" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.49786323" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.49786323" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977476" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.4957265" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3975225" sideWeight="0.49786323" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.4957265" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2639,217 +3002,26 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricView.java</url>
-          <line>173</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java</url>
+          <line>278</line>
           <properties />
-          <option name="timeStamp" value="97" />
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricView.java</url>
-          <line>156</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionActivity.java</url>
+          <line>68</line>
           <properties />
-          <option name="timeStamp" value="98" />
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="99" />
+      <option name="time" value="120" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#ExMusicPlayer#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#ExMusicPlayer#1;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#getWidght#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#getCallBack#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#run#0;class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/PlaylistSelectionListViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Song.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="167" column="42" selection-start-line="167" selection-start-column="42" selection-end-line="167" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#ExMusicPlayer#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#ExMusicPlayer#1;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#getWidght#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#getCallBack#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#run#0;class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/PlaylistSelectionListViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="66" selection-start-line="83" selection-start-column="66" selection-end-line="83" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="253" column="22" selection-start-line="253" selection-start-column="22" selection-end-line="253" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="183" column="4" selection-start-line="183" selection-start-column="4" selection-end-line="183" selection-end-column="4" />
-          <folding>
-            <element signature="method#MusicPlayer#1;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#initPlayer#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#addSong#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Play#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#PlayFirstTime#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#PlayNext#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Reset#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Pause#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Resume#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Stop#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#setPlayChangeMode#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#SendErrorMsg#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#AddSongToCurrentPlayList#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#getSongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayChangeMode#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayerStatu#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlay#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnGetInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlayModeChange#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnReset#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlayFirstTime#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnStop#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#SongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayHistoryRecoder#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PreparedPlay#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#CallerGetSongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#se#0;class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#onError#0;class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#TriggerPlayerComplete#0;class#MusicPlayer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="method#ExMusicPlayer#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#ExMusicPlayer#1;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#getWidght#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#getCallBack#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#run#0;class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1242#1278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1242#1278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2862,39 +3034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="method#MusicPlayer#1;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#initPlayer#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#addSong#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Play#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#PlayFirstTime#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#PlayNext#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Reset#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Pause#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Resume#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Stop#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#setPlayChangeMode#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#SendErrorMsg#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#AddSongToCurrentPlayList#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#getSongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayChangeMode#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayerStatu#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlay#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnGetInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlayModeChange#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnReset#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlayFirstTime#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnStop#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#SongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayHistoryRecoder#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PreparedPlay#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#CallerGetSongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#se#0;class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#onError#0;class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#TriggerPlayerComplete#0;class#MusicPlayer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2919,10 +3058,21 @@
           <folding>
             <element signature="method#ExMusicPlayer#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#ExMusicPlayer#1;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#Init#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayTrigger#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayNextTrigger#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayPreviousTrigger#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#getWidght#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#getCallBack#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#run#0;class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#TriggerBlurRequestFile#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#TimerDisplayer#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPlay#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPause#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPlayModeChange#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#OnPlayModeChange#0;class#CallBack_OnPlayModeChange#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnStop#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#onStop#0;class#CallBack_OnStop#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnResume#0;class#ExMusicPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2931,9 +3081,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1242#1278#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2959,10 +3107,21 @@
           <folding>
             <element signature="method#ExMusicPlayer#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#ExMusicPlayer#1;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#Init#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayTrigger#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayNextTrigger#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayPreviousTrigger#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#getWidght#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#getCallBack#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#run#0;class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#TriggerBlurRequestFile#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#TimerDisplayer#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPlay#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPause#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPlayModeChange#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#OnPlayModeChange#0;class#CallBack_OnPlayModeChange#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnStop#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#onStop#0;class#CallBack_OnStop#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnResume#0;class#ExMusicPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2971,23 +3130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.3886926">
           <caret line="533" column="5" selection-start-line="533" selection-start-column="5" selection-end-line="533" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/SongInfoParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71480143">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="65" />
-          <folding>
-            <element signature="e#1242#1278#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3019,14 +3161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Song.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17927822">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricSentence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3041,34 +3175,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://H:/Android/Sdk/platforms/android-23/android.jar!/android/app/Instrumentation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37416482">
-          <caret line="193" column="16" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="84" selection-start-line="38" selection-start-column="84" selection-end-line="38" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://H:/Android/Sdk/platforms/android-23/android.jar!/android/view/View.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.39285713">
           <caret line="290" column="16" selection-start-line="290" selection-start-column="16" selection-end-line="290" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66442955">
-          <caret line="64" column="86" selection-start-line="64" selection-start-column="86" selection-end-line="64" selection-end-column="86" />
         </state>
       </provider>
     </entry>
@@ -3091,16 +3201,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="193" column="43" selection-start-line="193" selection-start-column="43" selection-end-line="193" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59395975">
-          <caret line="51" column="89" selection-start-line="45" selection-start-column="8" selection-end-line="51" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3111,107 +3213,314 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.091089">
-          <caret line="58" column="38" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+        <state vertical-scroll-proportion="2.5435169">
+          <caret line="162" column="48" selection-start-line="162" selection-start-column="48" selection-end-line="162" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/open_file_dialog_item_layout.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_head_playlistselection.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/Android/Sdk/platforms/android-23/android.jar!/android/app/Instrumentation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.043392505">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/SongInfoParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5666075">
+          <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/Android/Sdk/platforms/android-23/android.jar!/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36883628">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/captures/com.mycompany.myapp_2016.07.03_10.35.trace">
+      <provider selected="true" editor-type-id="capture-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_playlistselection.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Syncimageloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8076923">
+          <caret line="72" column="19" selection-start-line="59" selection-start-column="8" selection-end-line="72" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1512#1887#0" expanded="false" />
+            <element signature="e#1886#1887#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://H:/Android/Sdk/platforms/android-23/android.jar!/android/database/sqlite/SQLiteOpenHelper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0">
+        <state vertical-scroll-proportion="0.05232558">
           <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_selection_playlist.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelectionListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46153846">
+          <caret line="274" column="15" selection-start-line="274" selection-start-column="15" selection-end-line="274" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Cache.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3846154">
+          <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionAdapter/AlbumAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="84" selection-start-line="38" selection-start-column="84" selection-end-line="38" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Song.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicDataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="74" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_selection.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6896553">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/ids.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5714285">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5588785">
+          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
           <folding>
-            <element signature="method#MusicPlayer#1;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#initPlayer#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#addSong#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Play#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#PlayFirstTime#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#PlayNext#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Reset#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Pause#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Resume#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#Stop#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#setPlayChangeMode#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#SendErrorMsg#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#AddSongToCurrentPlayList#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#getSongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayChangeMode#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayerStatu#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlay#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnGetInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlayModeChange#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnReset#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnPlayFirstTime#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#OnStop#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#SongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PlayHistoryRecoder#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#PreparedPlay#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#CallerGetSongInfo#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#se#0;class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="method#onError#0;class#TriggerPlayerError#0;class#MusicPlayer#0" expanded="false" />
-            <element signature="class#TriggerPlayerComplete#0;class#MusicPlayer#0" expanded="false" />
+            <element signature="e#3220#3694#0" expanded="true" />
+            <element signature="e#3693#3694#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ParameterSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42984015">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2242991">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#688#706#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ExMusicPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5851064">
-          <caret line="299" column="17" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.50174624">
+          <caret line="231" column="11" selection-start-line="231" selection-start-column="11" selection-end-line="231" selection-end-column="11" />
           <folding>
             <element signature="method#ExMusicPlayer#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#ExMusicPlayer#1;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#Init#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayTrigger#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayNextTrigger#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#setPlayPreviousTrigger#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#getWidght#0;class#ExMusicPlayer#0" expanded="false" />
             <element signature="method#getCallBack#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
-            <element signature="method#run#0;class#RenderBG#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="e#13615#14498#0" expanded="true" />
+            <element signature="e#14497#14498#0" expanded="true" />
+            <element signature="e#14982#15390#0" expanded="true" />
+            <element signature="e#15389#15390#0" expanded="true" />
+            <element signature="class#TriggerBlurRequestFile#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#TimerDisplayer#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPlay#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPause#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnPlayModeChange#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#OnPlayModeChange#0;class#CallBack_OnPlayModeChange#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnStop#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="method#onStop#0;class#CallBack_OnStop#0;class#ExMusicPlayer#0" expanded="false" />
+            <element signature="class#CallBack_OnResume#0;class#ExMusicPlayer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricView.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionViewPagerTabAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1985815">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
           <folding>
-            <element signature="method#setDisplayColor#0;class#LyricView#0" expanded="false" />
-            <element signature="method#Check#0;class#LyricView#0" expanded="false" />
-            <element signature="method#setLyric#0;class#LyricView#0" expanded="false" />
-            <element signature="method#setLyricFromFile#0;class#LyricView#0" expanded="false" />
-            <element signature="e#6309#6324#0" expanded="true" />
-            <element signature="method#onTouchEvent#0;class#LyricView#0" expanded="false" />
-            <element signature="e#10680#10681#0" expanded="true" />
-            <element signature="e#10714#10715#0" expanded="true" />
-            <element signature="class#Status#0;class#LyricView#0" expanded="false" />
-            <element signature="class#DisplayType#0;class#LyricView#0" expanded="false" />
-            <element signature="class#OnRequestLyric#0;class#LyricView#0" expanded="false" />
-            <element signature="class#OnScrolling#0;class#LyricView#0" expanded="false" />
-            <element signature="class#OnScrollFinished#0;class#LyricView#0" expanded="false" />
-            <element signature="class#OnRequestShowOrHide#0;class#LyricView#0" expanded="false" />
-            <element signature="class#DrawingLooper#0;class#LyricView#0" expanded="false" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#1220#1221#0" expanded="true" />
+            <element signature="e#1255#1256#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1438#1439#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/PlayListSelection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MusicPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/Activities/Selection/SelectionAdapter/PlayListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="228" column="31" selection-start-line="228" selection-start-column="31" selection-end-line="228" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9069#10271#0" expanded="true" />
+            <element signature="e#10270#10271#0" expanded="true" />
+            <element signature="e#10756#11979#0" expanded="true" />
+            <element signature="e#11978#11979#0" expanded="true" />
+            <element signature="e#12616#12882#0" expanded="true" />
+            <element signature="e#12881#12882#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/LyricView/LyricDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27353463">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

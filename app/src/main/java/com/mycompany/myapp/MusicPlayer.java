@@ -2,13 +2,16 @@ package com.mycompany.myapp;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Stack;
@@ -281,16 +284,10 @@ public class MusicPlayer {
         return info;
     }
 
-    private SongInfo getSongInfo(int _index) {
-        SongInfo info = new SongInfo();
-        SongInfoParser parser = new SongInfoParser(play_list.get(_index).AbsFile_Path);
-        info.File_Path = play_list.get(_index).AbsFile_Path;
-        info.Cover = parser.getCover();
-        info.Artist = parser.getArtist();
-        info.Album = parser.getAlbum();
-        info.Index = _index;
-        info.Title = parser.getTitle();
-        info.Encode = parser.getEncode();
+    private Song getSongInfo(int _index) {
+        Song info =play_list.get(_index);
+        info.PlayListId=_index;
+        info.Cover=Utils.getCover(info.AbsFile_Path);
         return info;
     }
 
@@ -320,7 +317,7 @@ public class MusicPlayer {
     }
 
     public interface OnGetInfo {
-        void onGetInfo(SongInfo info);
+        void onGetInfo(Song info);
     }
 
     public interface OnPlayModeChange {

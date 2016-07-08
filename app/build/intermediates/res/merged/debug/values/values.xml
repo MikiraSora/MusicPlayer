@@ -7,6 +7,8 @@
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
     <dimen name="navigation_drawer_width">240dp</dimen>
+    <item name="id_save" type="id"/>
+    <item name="item_save" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>

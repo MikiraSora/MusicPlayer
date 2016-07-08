@@ -20,7 +20,7 @@ public class SongInfoParser {
         }
     }
 
-    String getTitle() {
+    public String getTitle() {
         if (file == null)
             return "unknown";
         String val = "unknown";
@@ -40,7 +40,7 @@ public class SongInfoParser {
         return val;
     }
 
-    String getArtist() {
+    public String getArtist() {
         if (file == null)
             return "unknown";
         String val = "unknown";
@@ -61,7 +61,7 @@ public class SongInfoParser {
         return val;
     }
 
-    String getAlbum() {
+    public String getAlbum() {
         if (file == null)
             return "unknown";
         String val = "unknown";
@@ -81,7 +81,7 @@ public class SongInfoParser {
         return val;
     }
 
-    Bitmap getCover() {
+    public Bitmap getCover() {
         if (file == null)
             return null;
         if (file.hasId3v2Tag()) {
@@ -95,7 +95,7 @@ public class SongInfoParser {
         return null;
     }
 
-    String getEncode() {
+    public String getEncode() {
         try {
             return file.getId3v2Tag().getEncoder();
         } catch (Exception e) {
