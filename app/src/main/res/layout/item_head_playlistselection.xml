@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="220dp"
+    android:layout_width="match_parent"
+    android:clipChildren="true">
+
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/folder_bg"/>
+
+    <RelativeLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:background="#F7F7F7"
+        android:alpha="0.5"/>
+
+    <RelativeLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:id="@+id/itemalbuminfoRelativeLayout1"
+        android:alpha="1">
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:text="返回"
+            android:id="@+id/itemalbuminfoButton1"
+            android:alpha="1.0"/>
+
+        <ImageButton
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_alignParentRight="true"
+            android:id="@+id/itemalbuminfoImageButton1"/>
+
+        <ImageButton
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_toLeftOf="@id/itemalbuminfoImageButton1"
+            android:layout_marginRight="15dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@id/itemalbuminfoRelativeLayout1"
+        android:gravity="left|center">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:text="Second Album"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            android:id="@+id/folder_name"
+            android:layout_marginTop="45dp"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:text="Medium Text"
+            android:layout_below="@id/folder_name"
+            android:textColor="#000000"
+            android:id="@+id/folder_owner"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
