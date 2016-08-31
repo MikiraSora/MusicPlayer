@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,10 +73,10 @@ public class MusicPlayer {
         return song;
     }
 
-    void Play(int _index) {
+    public void Play(int _index) {
         try {
-            if ((status == PlayerStatu.Error) || (status == PlayerStatu.Processing))
-                player.reset();
+            /*if ((status == PlayerStatu.Error) || (status == PlayerStatu.Processing))
+                player.reset();*/
             //throw new Exception("Player isnt Idle now");
             if ((_index >= play_list.size())) {
                 SendErrorMsg("Play a track which unreachable : " + _index);
@@ -88,12 +89,18 @@ public class MusicPlayer {
                 Play(index);
                 return;
             }
+            /*
             if (((status == PlayerStatu.Playing) || (status == PlayerStatu.Pause))) {
                 player.reset();
-            }
+            }*/
+            player.reset();
             index = _index;
             String song_path = play_list.get(index).AbsFile_Path;
-            player.setDataSource((new FileInputStream(song_path)).getFD());
+            if(!(new File(song_path).exists())){
+                SendErrorMsg(String.format("mp3 file %s is not found!"));
+                status=PlayerStatu.Error;
+            }
+            player.setDataSource(song_path);
 
             isPause = status == PlayerStatu.Pause;
             status = PlayerStatu.Processing;
@@ -146,8 +153,11 @@ public class MusicPlayer {
         player.seekTo(0);
     }
 
-    void Reset() {
-
+    void Reset(){
+        //player.reset();
+        //status=PlayerStatu.Idle;
+        index=0;
+        playrecorder.Reset();
     }
 
     void Pause() {
@@ -221,7 +231,7 @@ public class MusicPlayer {
     void SendErrorMsg(String msg) {
         if (ableSendErrorMsg) {
             Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show();
-            Log.d("MusicPlayer", msg);
+            //Log.d("MusicPlayer", msg);
             if (trigger_onerror != null)
                 trigger_onerror.onError(msg);
         }
@@ -363,6 +373,14 @@ public class MusicPlayer {
         Stack<Integer> backupStack = new Stack<Integer>();
         int now = 0;
 
+        void Reset(){
+            history = new ArrayList<Integer>();
+            rand = new Random();
+            mainStack = new Stack<Integer>();
+            backupStack = new Stack<Integer>();
+            int now = 0;
+        }
+
         void ResetRandomRecord(int max) {
             ArrayList<Integer> tmp = new ArrayList<Integer>();
             for (int i = 0; i < max; i++) {
@@ -387,6 +405,8 @@ public class MusicPlayer {
 
         int getNext() {
             mainStack.push(now);
+            if(play_list.size()==1)
+                return 0;
             if (backupStack.size() == 0) {
                 if (mode != PlayChangeMode.Shuffle) {
                     //It is Normal

@@ -253,9 +253,6 @@ public class LyricView extends View {
                         paint.setAlpha(255 / (2 * display_line) * (display_line - i));
                     }
                     paint.setARGB(paint.getAlpha(), Color.red(color_normal), Color.green(color_normal), Color.blue(color_normal));
-
-                    //paint.setARGB(paint.getAlpha(), Color.red(color_normal), Color.green(color_normal), Color.blue(color_normal));
-                    //paint.setAlpha((int)(255*0.5));
                     if (lyric[i] == null)
                         continue;
 

@@ -1,18 +1,27 @@
 package com.mycompany.myapp.Activities;
 
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.widget.*;
 import android.content.*;
 
 import java.lang.ref.SoftReference;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+
 import android.view.*;
 import android.graphics.*;
 import android.util.*;
 
+import com.mycompany.myapp.CacheCollection.BaseCache;
+import com.mycompany.myapp.CacheCollection.BitmapCache;
+import com.mycompany.myapp.CacheCollection.MemoryCache;
 import com.mycompany.myapp.ExMusicPlayer;
+//import com.mycompany.myapp.MemoryCache;
+import com.mycompany.myapp.ParameterSender;
 import com.mycompany.myapp.R;
 import com.mycompany.myapp.Song;
 import com.mycompany.myapp.Utils;
@@ -25,21 +34,19 @@ public class PlayListSelectionListAdapter extends BaseAdapter
     LayoutInflater inflater=null;
     ArrayList<Song> item_list=null;
     PlayListInfo headInfo=null;
-    Handler handler;
+    //Handler handler;
+    BitmapCache bitmapCache=null;
 
     ExMusicPlayer musicPlayer=null;
 
-    HashMap<String,Bitmap> cacheBitmap=new HashMap<>();
+    Handler handler=null;
+    ArrayList<AsyncUpdateTask> asyncUpdateTasks=new ArrayList<>();
 
-    ArrayList<AysncUpdateCoverTask> aysncUpdateCoverTaskArrayList=new ArrayList<>();
-
-    ArrayList<AysncUpdateCoverTask> aysncPostUpdateTaskArrayList=new ArrayList<>();
-
+    ExecutorService ThreadPoolCache=null;
 
     public final int Type_Head=0;
     public final int Type_Item=1;
 
-    boolean isUpdateRunning=false;
     boolean isPostUpdateRunning=false;
 
     private PlayListSelectionListAdapter()
@@ -73,7 +80,8 @@ public class PlayListSelectionListAdapter extends BaseAdapter
                 super.handleMessage(msg);
             }
         };
-        //syncImageLoader=new Syncimageloader();
+        ThreadPoolCache=Utils.getCacheThreadPool(ctx);
+        bitmapCache=(BitmapCache)((ParameterSender)ctx.getApplicationContext()).getObject("BitmapCache");
     }
 
     void setMusicPlayer(ExMusicPlayer player){
@@ -83,33 +91,26 @@ public class PlayListSelectionListAdapter extends BaseAdapter
     void addItem(Song sd)
     {
         item_list.add(sd);
-        AysncUpdateCoverTask ntask=new AysncUpdateCoverTask();
-        ntask._id=item_list.size()-1;
-        ntask.path=sd.AbsFile_Path;
-        aysncUpdateCoverTaskArrayList.add(ntask);
-        if(isUpdateRunning)
-            return;
-        isUpdateRunning=true;
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while(true){
-                    if(aysncUpdateCoverTaskArrayList.size()!=0){
-                        final PlayListSelectionListAdapter.AysncUpdateCoverTask task= aysncUpdateCoverTaskArrayList.remove(0);
-                        if(!cacheBitmap.containsKey(task.path)){
-                            cacheBitmap.put(task.path,(Utils.getCover(task.path)));
-                        }
-                    }else {
-                        break;
-                    }
-                }
-                isUpdateRunning=false;
-            }
-        }).start();
     }
 
-    public void PostChangeCache(){
-        //cacheBitmap=syncImageLoader.imagecache;
+    void setListView(ListView listView){
+        mListView=listView;
+        /*
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i("PlayNowClickListener","click");
+                if(i==0)
+                    return;
+                Song sd=(Song)getItem(i);
+                String curPlaylistName=headInfo.Name;
+                int pos=item_list.indexOf(sd.AbsFile_Path);
+                if(musicPlayer.getCurrentPlayListName()!=curPlaylistName){
+                    musicPlayer.SwitchPlayList(curPlaylistName);
+                }
+                musicPlayer.Play(pos);
+            }
+        });*/
     }
 
     @Override
@@ -131,7 +132,7 @@ public class PlayListSelectionListAdapter extends BaseAdapter
     }
 
     @Override
-    public View getView(int p1, View p2, ViewGroup p3)
+    public View getView(final int p1, View p2, ViewGroup p3)
     {
         RelativeLayout rl=null;
         Song data=null;
@@ -146,18 +147,20 @@ public class PlayListSelectionListAdapter extends BaseAdapter
                     rl = (RelativeLayout)inflater.inflate(item, null);
                     break;
             }
+
         }
         else
         {
             rl = (RelativeLayout)p2;
         }
+        rl.setTag(p1);
         try
         {
             Bitmap bmp=null;
             PlayListInfo fd=null;
-            Song sd=null;
             ImageView imageView=null;
             TextView textView=null;
+            //rl.setTag(p1);
 
             switch (getItemViewType(p1))
             {
@@ -168,9 +171,9 @@ public class PlayListSelectionListAdapter extends BaseAdapter
                     ((TextView)rl.findViewById(R.id.folder_owner)).setText(headInfo.Owner);
                     if (headInfo.CoverImage==null)
                     {
-                        rl.setTag(p1);
-                        //imageView.setImageBitmap(item_list.size()!=0?getCover(item_list.get(0).AbsFile_Path):null);
-                        AsyncSetImageBitmap(p1,item_list.get(0).AbsFile_Path);
+                        if(bitmapCache.Contains(Utils.getCoverName(item_list.get(0).AbsFile_Path))) {
+                            ((ImageView)rl.findViewById(R.id.folder_bg)).setImageBitmap(getCover(item_list.get(0).AbsFile_Path));
+                        }
                     }
                     else
                     {
@@ -178,12 +181,25 @@ public class PlayListSelectionListAdapter extends BaseAdapter
                     }
                     break;
                 case Type_Item:
-                    sd = (Song) item_list.get((int)getItemId(p1));
+                    final Song sd = (Song) item_list.get((int)getItemId(p1));
                     ((TextView)rl.findViewById(R.id.song_artist)).setText(sd.Artist);
                     ((TextView)rl.findViewById(R.id.song_tittle)).setText(sd.Title);
-                    rl.setTag(p1);
-                    AsyncSetImageBitmap(p1,sd.AbsFile_Path);
+                    ((ImageButton)rl.findViewById(R.id.play_button)).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Log.i("PlayNowClickListener", "click");
+                            String curPlaylistName = headInfo.Name;
+                            if (musicPlayer.getCurrentPlayListName() != curPlaylistName) {
+                                musicPlayer.SwitchPlayList(curPlaylistName);
+                            }
+                            musicPlayer.Play(p1-1);
+                        }
+                    });
+                    if(bitmapCache.Contains(Utils.getCoverName(sd.AbsFile_Path))) {
+                        ((ImageView)rl.findViewById(R.id.song_cover)).setImageBitmap(getCover(sd.AbsFile_Path));
+                    }
             }
+            return rl;
         }
         catch (Exception e)
         {
@@ -225,49 +241,62 @@ public class PlayListSelectionListAdapter extends BaseAdapter
     }
 
     Bitmap getCover(String path){
-        if(!cacheBitmap.containsKey(path)){
-            Bitmap bmp=Utils.getCover(path);
-            cacheBitmap.put(path,(bmp));
-            return bmp;
-        }
-        return cacheBitmap.get(path);
+        return bitmapCache.get(Utils.getCoverName(path), new BaseCache.OnRequestCache<String, Bitmap>() {
+            @Override
+            public Bitmap onRequestCache(String s) {
+                return Utils.getCover(s);
+            }
+        });
     }
 
-    void AsyncSetImageBitmap(final int position, final String path){
-        AysncUpdateCoverTask ntask=new AysncUpdateCoverTask();
-        ntask._id=position;
-        ntask.path=path;
-        aysncPostUpdateTaskArrayList.add(ntask);
+    public void AsyncSetImageBitmap(int id){
+        AsyncUpdateTask ntask=new AsyncUpdateTask();
+        ntask.id=id;
+        ntask.path=null;
+        if(!asyncUpdateTasks.contains(ntask))
+            asyncUpdateTasks.add(ntask);
 
         if(isPostUpdateRunning)
             return;
         isPostUpdateRunning=true;
-        new Thread(new Runnable() {
+
+        ThreadPoolCache.execute(new Runnable() {
+            AsyncUpdateTask task=null;
+            Bitmap bmp=null;
             @Override
             public void run() {
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        while (true) {
-                            if(aysncPostUpdateTaskArrayList.size()==0)
-                                break;
-                            AysncUpdateCoverTask task = aysncPostUpdateTaskArrayList.remove(0);
-                            if (mListView == null)
-                                return;
-                            RelativeLayout rl = (RelativeLayout) mListView.findViewWithTag(task._id);
-                            if (rl == null)
-                                return;
-                            ImageView iv = (ImageView) rl.findViewById(task._id == 0 ? R.id.folder_bg : R.id.song_cover);
-                            if (iv == null)
-                                return;
-                            iv.setImageBitmap(getCover(task.path));
-                            Log.i("AysncUpdateCoverTask", String.format("%d - %s is automatic calling", task._id, task.path));
-                        }
-                    }
-                });
+                while (true) {
+                    if (asyncUpdateTasks.size() == 0)
+                        break;
+                    task = asyncUpdateTasks.remove(0);
+                    if (mListView == null)
+                        break;
+
+                    task.path=(item_list.get((int)getItemId(task.id))).AbsFile_Path;
+                    bmp = getCover(task.path);
+                    task.cover=bmp;
+                    handler.post(new UpdateCover(task));
+                    //Log.i("AsyncSetImageBitmap",String.format("%s - %s (%s)",task.cover.toString(),task.id,mListView.toString()));
+                }
                 isPostUpdateRunning=false;
             }
-        }).start();
+        });
+    }
+
+    class AsyncUpdateTask{
+        String path;
+        int id;
+        Bitmap cover=null;
+
+        @Override
+        public boolean equals(Object o) {
+            return ((AsyncUpdateTask)o).id==this.id;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.id;
+        }
     }
 
     public static class PlayListInfo{
@@ -279,5 +308,95 @@ public class PlayListSelectionListAdapter extends BaseAdapter
         int _id;
         String path;
     }
+
+    class UpdateCover implements Runnable{
+        AsyncUpdateTask updateTask=null;
+        UpdateCover(AsyncUpdateTask task){updateTask=task;}
+        @Override
+        public void run() {
+            RelativeLayout rl = (RelativeLayout)mListView.findViewWithTag(updateTask.id);
+            if (rl == null)
+                return;
+            if(updateTask.id==0) {
+                ImageView imageView=(ImageView)rl.findViewById(R.id.folder_bg);
+                if (headInfo.CoverImage == null) {
+                    if (bitmapCache.Contains(Utils.getCoverName(item_list.get(0).AbsFile_Path))) {
+                        imageView.setImageBitmap(getCover(item_list.get(0).AbsFile_Path));
+                    }
+                } else {
+                    imageView.setImageBitmap(headInfo.CoverImage);
+                }
+                return;
+            }
+            ImageView iv = (ImageView)rl.findViewById(R.id.song_cover);
+            if (iv == null)
+                return;
+            iv.setImageBitmap(updateTask.cover);
+            //Log.i("AsyncUpdateTask(null)", String.format("%d - %s is automatic calling", updateTask.id, updateTask.path));
+        }
+    }
+
+    public static class SeekUpdater implements ListView.OnScrollListener{
+        ListView mListView=null;
+        PlayListSelectionListAdapter albumAdapter=null;
+        private int previousFirstVisibleItem = 0;
+        private long previousEventTime = 0;
+        private double speed = 0;
+
+        private SeekUpdater(){}
+        public SeekUpdater(PlayListSelectionListAdapter albumAdapter1,ListView listView){
+            albumAdapter=albumAdapter1;
+            mListView=listView;
+        }
+
+        public void updateItem(){
+            int endPos=mListView.getLastVisiblePosition(),startPos=mListView.getFirstVisiblePosition();
+            for(int index=startPos;index<=endPos;index++)
+                albumAdapter.AsyncSetImageBitmap(index);
+        }
+
+        @Override
+        public void onScroll(AbsListView absListView, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            if (previousFirstVisibleItem != firstVisibleItem){
+                long currTime = System.currentTimeMillis();
+                long timeToScrollOneElement = currTime - previousEventTime;
+                speed = ((double)1/timeToScrollOneElement)*1000;
+                previousFirstVisibleItem = firstVisibleItem;
+                previousEventTime = currTime;
+                if(speed<11){
+                    updateItem();
+                    Log.d("ScrollSpeed", "call");
+                }
+                Log.d("ScrollSpeed", "Speed: " +speed + " elements/second");
+            }
+        }
+
+        @Override
+        public void onScrollStateChanged(AbsListView absListView, int i) {
+            switch (i){
+                case ListView.OnScrollListener.SCROLL_STATE_FLING:
+                    break;
+                case ListView.OnScrollListener.SCROLL_STATE_IDLE:
+                    updateItem();
+                    break;
+                case ListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:
+                    break;
+            }
+        }
+    }
+/*
+    class PlayNowClickListener implements RelativeLayout.OnClickListener{
+        @Override
+        public void onClick(View view) {
+            Log.i("PlayNowClickListener","click");
+            Song song=(Song)view.getTag();
+            String curPlaylistName=headInfo.Name;
+            int pos=item_list.indexOf(song.AbsFile_Path);
+            if(musicPlayer.getCurrentPlayListName()!=curPlaylistName){
+                musicPlayer.SwitchPlayList(curPlaylistName);
+            }
+            musicPlayer.Play(pos);
+        }
+    }*/
 
 }

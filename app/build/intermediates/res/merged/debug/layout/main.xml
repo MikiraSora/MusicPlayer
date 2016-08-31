@@ -1,183 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content">
+<android.support.v4.widget.DrawerLayout
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context=".MainActivity">
 
-	<ImageView
-		android:id="@+id/bg"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:adjustViewBounds="true"
-		android:scaleType="centerCrop" />
+	<RelativeLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center">
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		android:visibility="visible"
-		android:weightSum="1">
-
-		<RelativeLayout
+		<ImageView
+			android:id="@+id/bg"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:clipChildren="true">
+			android:layout_height="match_parent"
+			android:adjustViewBounds="true"
+			android:scaleType="centerCrop" />
 
-			<ImageView
-				android:id="@+id/mainImageView1"
-				android:layout_width="270dp"
-				android:layout_height="270dp"
-				android:layout_centerHorizontal="true"
-				android:layout_centerInParent="false"
-				android:layout_marginTop="30dp"
-				android:scaleType="centerCrop" />
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:visibility="visible"
+			android:weightSum="1">
 
-			<com.mycompany.myapp.LyricView.LyricView
-				android:id="@+id/lyricview"
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:layout_above="@+id/song"
-				android:layout_centerHorizontal="true"></com.mycompany.myapp.LyricView.LyricView>
-
-			<SeekBar
-				android:id="@+id/mainSeekBar1"
+			<RelativeLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_alignEnd="@+id/mainImageView1"
-				android:layout_alignLeft="@+id/mainImageView1"
-				android:layout_alignRight="@+id/mainImageView1"
-				android:layout_alignStart="@+id/mainImageView1"
-				android:layout_below="@+id/song"
-				android:layout_marginTop="20dp" />
+				android:clipChildren="true">
 
-			<TextView
-				android:id="@+id/song"
-				android:layout_width="wrap_content"
+				<ImageView
+					android:id="@+id/mainImageView1"
+					android:layout_width="270dp"
+					android:layout_height="270dp"
+					android:layout_centerHorizontal="true"
+					android:layout_centerInParent="false"
+					android:layout_marginTop="30dp"
+					android:scaleType="centerCrop" />
+
+				<com.mycompany.myapp.LyricView.LyricView
+					android:id="@+id/lyricview"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_above="@+id/song"
+					android:layout_centerHorizontal="true"></com.mycompany.myapp.LyricView.LyricView>
+
+				<SeekBar
+					android:id="@+id/mainSeekBar1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignEnd="@+id/mainImageView1"
+					android:layout_alignLeft="@+id/mainImageView1"
+					android:layout_alignRight="@+id/mainImageView1"
+					android:layout_alignStart="@+id/mainImageView1"
+					android:layout_below="@+id/song"
+					android:layout_marginTop="20dp" />
+
+				<TextView
+					android:id="@+id/song"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/mainImageView1"
+					android:layout_centerHorizontal="true"
+					android:layout_marginTop="15dp"
+					android:singleLine="true"
+					android:text="Large Text"
+					android:textAppearance="?android:attr/textAppearanceLarge" />
+
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_below="@+id/mainImageView1"
-				android:layout_centerHorizontal="true"
-				android:layout_marginTop="15dp"
-				android:singleLine="true"
-				android:text="Large Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
+				android:layout_weight="1.60">
 
-		</RelativeLayout>
+				<Button
+					android:id="@+id/action"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:layout_centerVertical="true"
+					android:text="Play" />
 
-		<RelativeLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_weight="1.60">
+				<TextView
+					android:id="@+id/status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_above="@id/action"
+					android:layout_centerHorizontal="true"
+					android:layout_centerVertical="true"
+					android:layout_marginBottom="10dp"
+					android:text="Large Text"
+					android:textAppearance="?android:attr/textAppearanceLarge" />
 
-			<Button
-				android:id="@+id/action"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_centerHorizontal="true"
-				android:layout_centerVertical="true"
-				android:text="Play" />
+				<Button
+					android:id="@+id/Previous"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignBottom="@id/action"
+					android:layout_alignParentLeft="true"
+					android:text="Button" />
 
-			<TextView
-				android:id="@+id/status"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_above="@id/action"
-				android:layout_centerHorizontal="true"
-				android:layout_centerVertical="true"
-				android:layout_marginBottom="10dp"
-				android:text="Large Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
+				<Button
+					android:id="@+id/Next"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignBottom="@id/action"
+					android:layout_alignParentRight="true"
+					android:text="Button" />
 
-			<Button
-				android:id="@+id/Previous"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignBottom="@id/action"
-				android:layout_alignParentLeft="true"
-				android:text="Button" />
+				<TextView
+					android:id="@+id/id"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/status"
+					android:layout_marginLeft="20dp"
+					android:layout_toRightOf="@id/status"
+					android:text="Large Text"
+					android:textAppearance="?android:attr/textAppearanceLarge" />
 
-			<Button
-				android:id="@+id/Next"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignBottom="@id/action"
-				android:layout_alignParentRight="true"
-				android:text="Button" />
+				<Button
+					android:id="@+id/statu"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_above="@+id/Previous"
+					android:layout_alignTop="@id/status"
+					android:layout_marginRight="20dp"
+					android:layout_toLeftOf="@id/status"
+					android:text="Large Text" />
 
-			<TextView
-				android:id="@+id/id"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignTop="@id/status"
-				android:layout_marginLeft="20dp"
-				android:layout_toRightOf="@id/status"
-				android:text="Large Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
+				<Button
+					android:id="@+id/open"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_above="@+id/status"
+					android:layout_alignLeft="@+id/statu"
+					android:layout_alignStart="@+id/statu"
+					android:text="Add" />
 
-			<Button
-				android:id="@+id/statu"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_above="@+id/Previous"
-				android:layout_alignTop="@id/status"
-				android:layout_marginRight="20dp"
-				android:layout_toLeftOf="@id/status"
-				android:text="Large Text" />
+				<Button
+					android:id="@+id/save"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_above="@+id/status"
+					android:layout_alignEnd="@+id/action"
+					android:layout_alignRight="@+id/action"
+					android:text="Save" />
 
-			<Button
-				android:id="@+id/open"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_above="@+id/status"
-				android:layout_alignLeft="@+id/statu"
-				android:layout_alignStart="@+id/statu"
-				android:text="Add" />
+				<Button
+					android:id="@+id/load"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentEnd="true"
+					android:layout_alignParentRight="true"
+					android:layout_alignTop="@+id/save"
+					android:text="load" />
 
-			<Button
-				android:id="@+id/save"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_above="@+id/status"
-				android:layout_alignEnd="@+id/action"
-				android:layout_alignRight="@+id/action"
-				android:text="Save" />
+				<Button
+					android:id="@+id/delete"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignLeft="@+id/open"
+					android:layout_alignParentTop="true"
+					android:layout_alignStart="@+id/open"
+					android:text="delete" />
 
-			<Button
-				android:id="@+id/load"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignParentEnd="true"
-				android:layout_alignParentRight="true"
-				android:layout_alignTop="@+id/save"
-				android:text="load" />
+				<Button
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Playlist"
+					android:id="@+id/playlist"
+					android:layout_alignParentTop="true"
+					android:layout_toLeftOf="@+id/id"
+					android:layout_toStartOf="@+id/id" />
 
-			<Button
-				android:id="@+id/delete"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignLeft="@+id/open"
-				android:layout_alignParentTop="true"
-				android:layout_alignStart="@+id/open"
-				android:text="delete" />
+				<Button
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="selection"
+					android:id="@+id/selection"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentEnd="true" />
 
-			<Button
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="Playlist"
-				android:id="@+id/playlist"
-				android:layout_alignParentTop="true"
-				android:layout_toLeftOf="@+id/id"
-				android:layout_toStartOf="@+id/id" />
+			</RelativeLayout>
 
-			<Button
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="selection"
-				android:id="@+id/selection"
-				android:layout_alignParentTop="true"
-				android:layout_alignParentEnd="true" />
+		</LinearLayout>
 
-		</RelativeLayout>
+	</RelativeLayout>
 
-	</LinearLayout>
+	<ListView
+		android:id="@+id/main_drawerlistview"
+		android:layout_width="150dp"
+		android:layout_height="match_parent"
+		android:layout_gravity="start"
+		android:background="#FFB5C5" />
 
-</RelativeLayout>
-
+</android.support.v4.widget.DrawerLayout>

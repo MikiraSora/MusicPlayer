@@ -18,6 +18,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import com.mycompany.myapp.CacheCollection.Cache;
 import com.mycompany.myapp.LyricView.LyricView;
 
 import java.io.ByteArrayOutputStream;
@@ -80,7 +81,7 @@ public class ExMusicPlayer extends MusicPlayer {
         return getPlayer();
     }
 
-    String getCurrentPlayListName(){return playlist_name;}
+    public String getCurrentPlayListName(){return playlist_name;}
 
     OnClickListener setPlayTrigger(TriggerPlay trigger) {
         callbackmap.put("play", trigger);
@@ -227,6 +228,39 @@ public class ExMusicPlayer extends MusicPlayer {
 
     void setCallBack(String name, Object callback) {
         callbackmap.put(name, callback);
+    }
+
+    public void SwitchPlayList(String name){
+        playlist_name=name;
+        Song[] songs = musicDataBase.LoadPlayList(name);
+        if (songs == null) {
+            SendErrorMsg("Cant get any song from playlist because of returning null");
+            return;
+        } else if (songs.length == 0) {
+            SendErrorMsg("Cant get any song from playlist because nothing in it");
+            return;
+        }
+        play_list.clear();
+        for (Song song : songs)
+            play_list.add(song);
+        Reset();
+    }
+
+    public void SwitchAlbum(String name){
+        Song[] songs=musicDataBase.getSongsFromAlbum(name);
+        if(songs==null){
+            SendErrorMsg("cant switch album cause none of song in database and get it");
+            return;
+        }else if (songs.length == 0) {
+            SendErrorMsg("Cant get any song from album   because nothing in it");
+            return;
+        }
+        Log.i("SwitchAlbum","Album : "+songs.length);
+        playlist_name=null;
+        play_list.clear();
+        for (Song song : songs)
+            play_list.add(song);
+        Reset();
     }
 
     public Song[] getCurrentPlayList(){

@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="H:\MusicPlayer\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="92f1005af4efb0d2548eceabe6e7cf3923b6fdb4">
+        <dex dex="H:\MusicPlayer\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_e0ec5c5058405e05b7a45e926b6ccb64d2e6e3a0.jar" />
+    </item>
+    <item
+        jar="H:\MusicPlayer\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1446a9372a4deb152fe5a67e6d9d4e9238e69bcc">
+        <dex dex="H:\MusicPlayer\app\build\intermediates\pre-dexed\debug\instant-run_296765b138b981f81b72a6494d10daba166ad69f.jar" />
+    </item>
+    <item
+        jar="C:\Users\mikir\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\24.1.1\3af19f153122737b372622fa6c81dd11a1c6b999\support-annotations-24.1.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="H:\MusicPlayer\app\build\intermediates\pre-dexed\debug\support-annotations-24.1.1_424f9a3cb1648c3ec1fbef723f5a11df79bb3eb5.jar" />
+    </item>
+    <item
+        jar="H:\MusicPlayer\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="H:\MusicPlayer\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.1.1_1bf0d5a921329ab7fadb6242a84702bca32fe73d.jar" />
+    </item>
+    <item
+        jar="H:\MusicPlayer\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="H:\MusicPlayer\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.1_c51cadab019b0a1df4d9aa5ad52ada80904e56c3.jar" />
+    </item>
+    <item
+        jar="H:\MusicPlayer\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="H:\MusicPlayer\app\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_35c5b2c014b7c17ae45c609799c4f327deafadc8.jar" />
+    </item>
+
+</items>

@@ -11,6 +11,8 @@ import android.widget.SeekBar;
 
 import com.mycompany.myapp.Activities.PlayListSelection;
 import com.mycompany.myapp.Activities.Selection.SelectionActivity;
+import com.mycompany.myapp.CacheCollection.Cache;
+import com.mycompany.myapp.CacheCollection.MemoryCache;
 import com.mycompany.myapp.LyricView.LyricView;
 
 import java.util.HashMap;
@@ -32,6 +34,8 @@ public class MainActivity extends Activity
 	void Init() {
 
 		final LyricView lyricView = (LyricView) findViewById(R.id.lyricview);
+		MemoryCache.Init(this);
+		MemoryCache.setAbleCache(true);
 		Button btn = (Button) findViewById(R.id.action);
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		Blur.setContext(getApplicationContext());
@@ -103,12 +107,17 @@ public class MainActivity extends Activity
 			@Override
 			public void onClick(View view) {
 				Intent intent=new Intent();
+				((ParameterSender)getApplicationContext()).putObject("musicplayer",mplayer);
 				intent.setClass(MainActivity.this, SelectionActivity.class);
-				//Log.d("MainActivity",String.format("now put %s into intent",name));
-				//intent.putExtra("playlist_name",name);
 				MainActivity.this.startActivity(intent);
 			}
 		});
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		MemoryCache.collectGC();
 	}
 }
 

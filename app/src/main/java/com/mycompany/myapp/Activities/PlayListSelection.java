@@ -22,8 +22,11 @@ import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.mycompany.myapp.Cache;
+//import com.mycompany.myapp.Cache;
+import com.mycompany.myapp.CacheCollection.Cache;
+import com.mycompany.myapp.ExMusicPlayer;
 import com.mycompany.myapp.MusicDataBase;
+import com.mycompany.myapp.ParameterSender;
 import com.mycompany.myapp.R;
 import com.mycompany.myapp.Song;
 import com.mycompany.myapp.SongInfoParser;
@@ -69,7 +72,7 @@ public class PlayListSelection extends Activity{
 
         /*
         listView.setOnScrollListener(adapter.onScrollListener);*/
-        adapter.mListView=listView;
+        adapter.setListView(listView);
 
         PlayListSelectionListAdapter.PlayListInfo info=new PlayListSelectionListAdapter.PlayListInfo();
         info.Name=playlist_name;
@@ -94,6 +97,15 @@ public class PlayListSelection extends Activity{
         handler.adapter=adapter;
         handler.songs=songs;
         handler.sendEmptyMessage(handler.CHANGE);
+        final PlayListSelectionListAdapter.SeekUpdater seekUpdater=new PlayListSelectionListAdapter.SeekUpdater(adapter,listView);
+        listView.setOnScrollListener(seekUpdater);
+        adapter.setMusicPlayer((ExMusicPlayer)((ParameterSender)this.getApplicationContext()).getObject("musicplayer"));
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                seekUpdater.updateItem();
+            }
+        },100);
     }
 }
 

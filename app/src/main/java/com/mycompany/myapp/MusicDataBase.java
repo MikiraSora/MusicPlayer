@@ -195,7 +195,7 @@ public class MusicDataBase extends SQLiteOpenHelper {
     }
 
     public Song getFirstSongOfPlayList(String name){
-        Cursor cursor = getReadableDatabase().query(playlist_table_name, new String[]{"Name", "Files"}, "Name=?", new String[]{name}, null, null, null);
+        Cursor cursor = getReadableDatabase().query(playlist_table_name, new String[]{"Name", "Files"}, "Name=?", new String[]{name}, null, null, "1");
         if (cursor.getCount() == 0)
             return null;
         String str = null;
@@ -235,7 +235,7 @@ public class MusicDataBase extends SQLiteOpenHelper {
     }
 
     public String[] getAllAlbum(){
-        Cursor cursor=getReadableDatabase().query(album_table_name,null,"Album=?",null,null,null,null,null);
+        Cursor cursor=getReadableDatabase().query(album_table_name,null,null,null,null,null,null,null);
         if(cursor.getCount()!=0) {
             String[] names = new String[cursor.getCount()];
             int i=0;
@@ -249,7 +249,7 @@ public class MusicDataBase extends SQLiteOpenHelper {
     }
 
     public Song getFirstSongOfAlbum(String name){
-        Cursor cursor = getReadableDatabase().query(music_table_name, null, "Album=?", new String[]{name}, null, null, null, null);
+        Cursor cursor = getReadableDatabase().query(music_table_name, null, "Album=?", new String[]{name}, null, null, null, "1");
         Song song;
         Log.i("sqlInfo", String.format("find album \"%s\" , found %d data", name, cursor.getCount()));
         while (cursor.moveToNext()) {
@@ -261,5 +261,49 @@ public class MusicDataBase extends SQLiteOpenHelper {
             return song;
         }
         return null;
+    }
+
+    public Song[] getSongsFromAlbum(String name){
+        Cursor cursor = getReadableDatabase().query(music_table_name, null, "Album=?", new String[]{name}, null, null, null, null);
+        if(cursor.getCount()==0)
+            return null;
+        Song[] songs=new Song[cursor.getCount()];
+        Song song;
+        int i=0;
+        Log.i("sqlInfo", String.format("find album \"%s\" , found %d data", name, cursor.getCount()));
+        while (cursor.moveToNext()) {
+            song = new Song();
+            song.AbsFile_Path = cursor.getString(index_AbsFile_path);
+            song.Album = cursor.getString(index_Album);
+            song.Artist = cursor.getString(index_Artist);
+            song.Title = cursor.getString(index_Title);
+            songs[i]=song;
+            i++;
+        }
+        return songs;
+    }
+
+    public void UpdateAlbum(String name, Song[] playlist) {
+        JSONArray jsonArray = new JSONArray();
+        for (Song song : playlist) {
+            try {
+                ContentValues values = new ContentValues();
+                values.put("Title", song.Title);
+                values.put("Artist", song.Artist);
+                values.put("Album", song.Album);
+                values.put("AbsFile_Path", song.AbsFile_Path);
+                getWritableDatabase().replace(music_table_name, "Album", values);
+                Add(song);
+            } catch (Exception e) {
+                Log.e(TAG, "cant update playlist " + name + (e.getCause()));
+            }
+        }
+    }
+
+    public boolean DeleteAlbum(String name){
+        if (getReadableDatabase().query(album_table_name, null, "Album=?", new String[]{name}, null, null, null, null).getCount() == 0)
+            return false;
+        getWritableDatabase().delete(album_table_name, "Album=?", new String[]{name});
+        return true;
     }
 }

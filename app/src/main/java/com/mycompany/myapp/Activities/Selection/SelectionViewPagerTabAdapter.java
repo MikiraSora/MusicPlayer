@@ -1,7 +1,10 @@
 package com.mycompany.myapp.Activities.Selection;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,6 +15,10 @@ import java.util.ArrayList;
  */
 public class SelectionViewPagerTabAdapter extends PagerAdapter{
     ArrayList<TabViewItem> containter=new ArrayList<>();
+
+    public SelectionViewPagerTabAdapter(){
+        super();
+    }
 
     TabViewItem add(TabViewItem item){
         containter.add(item);
@@ -52,8 +59,10 @@ public class SelectionViewPagerTabAdapter extends PagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
+        Log.i("PagerTabAdapter",String.format("switch to %s",containter.get(position).title));
         return containter.get(position).title;
     }
+
     public static class TabViewItem{
         View view;
         String title;
